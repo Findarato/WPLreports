@@ -1,0 +1,5 @@
+#<IfModule mod_userdir.c>
+#    <Directory /home/*/public_html>
+#        php_admin_flag engine On
+#    </Directory>
+#</IfModule>

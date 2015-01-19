@@ -1,0 +1,35 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../sortable-table/sortable-table.html">
+<polymer-element name="get-results" attributes="url" id="getResults">
+  <style>
+    .sortable-table-paging{
+      font-size:1.3em;
+    }
+    sortable-table{
+      width:100%;
+    }
+  </style>
+  <template>
+    <core-ajax auto id="elemAjax" handleAs="json" url="{{url}}" params='{{params}}' response="{{stats}}"></core-ajax>
+    <sortable-table data="{{stats}}" pagesize="20" sortcolumn="Month" theme="" footertemplate="defaultPaging" style="width:100%;padding:2em"></sortable-table>
+  </template>
+  <script>
+    //var ajax = this.shadowRoot.querySelector('core-ajax');
+    Polymer('get-results',{
+      ready:function(){
+        //this.ReportMonth = this.$.ReportMonth;
+        this.url = "../php/getResults.php";
+        this.params = {"all":"true","ReportMonth":"DESC"};
+      },
+      params:{"all":"true","ReportMonth":"DESC"},
+      url:"../php/getResults.php",
+      publish:{
+        "url":"",
+        "stats":[],
+        "params":[]
+      }
+    });
+  </script>
+</polymer-element>
