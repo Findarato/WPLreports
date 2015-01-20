@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html>
 <head>
   <title>Display Stats</title>
@@ -129,7 +129,17 @@
             <span flex></span>
             <core-icon-button icon="refresh"></core-icon-button>
             <core-icon-button icon="add"></core-icon-button>
-            <div class="bottom indent">Global Results</div>
+            <div class="bottom fit" horizontal layout>
+
+              <paper-tabs selected="0" flex style="max-width: 600px;" scrollable>
+
+                <paper-tab>Raw Data</paper-tab>
+                <paper-tab>Formated Data</paper-tab>
+                <paper-tab>ITEM THREE</paper-tab>
+
+              </paper-tabs>
+
+            </div>
           </core-toolbar>
           <div id="body">
             <get-results></get-results>
