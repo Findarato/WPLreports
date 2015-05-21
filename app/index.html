@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>poly foo</title>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+  <!-- endbuild -->
+
+  <!-- will be replaced with elements/elements.vulcanized.html -->
+  <link rel="import" href="elements/elements.html">
+  <!-- endreplace-->
+</head>
+
+<body unresolved fullbleed layout vertical>
+  <template is="auto-binding" id="app">
+
+    <core-drawer-panel>
+
+      <!-- Drawer -->
+      <core-header-panel drawer>
+
+        <!-- Drawer Toolbar -->
+        <core-toolbar>Menu</core-toolbar>
+
+        <!-- Drawer Content -->
+        <core-menu selected="0">
+          <core-item label="Yo"></core-item>
+          <core-item label="Polymer"></core-item>
+          <core-item label="App"></core-item>
+        </core-menu>
+
+      </core-header-panel>
+
+      <!-- Main -->
+      <core-header-panel main>
+
+        <!-- Main Toolbar -->
+        <core-toolbar>
+          <paper-icon-button icon="menu" core-drawer-toggle></paper-icon-button>
+          <span>{{appName}}</span>
+        </core-toolbar>
+        <paper-tabs selected="{{tabid}}" valueattr="data-tabid">
+          <paper-tab data-tabid="1">Data</paper-tab>
+          <paper-tab data-tabid="2">Hageman</paper-tab>
+          <paper-tab data-tabid="3">Thomas</paper-tab>
+          <paper-tab data-tabid="3">Museum</paper-tab>
+          <paper-tab data-tabid="5">LSC</paper-tab>
+          <paper-tab data-tabid="6">Summary</paper-tab>
+        </paper-tabs>
+        <!-- Main Content -->
+
+          <google-sheets key="1_JRP59TuVRHHLtTimsK2q3j-4ZtJUbCv4t_FVOpZY8c" tabid="1" clientId="900946452531-ep0bhil5dh3he9o6uil7r6pmr9v9l247.apps.googleusercontent.com" rows="{{rows}}" id="sheet"></google-sheets>
+            <div class="hero-unit">
+              <core-list data="{{GoogleSheetsRows}}" flex id="infoList">
+                <template>
+                  <div class="">
+                    <div>{{model.content}}</div>
+
+                  </div>
+                </template>
+              </core-list>
+        </div>
+      </core-header-panel>
+    </core-drawer-panel>
+
+  </template>
+
+  <!-- build:js scripts/app.js -->
+  <script src="scripts/app.js"></script>
+  <!-- endbuild-->
+</body>
+
+</html>
