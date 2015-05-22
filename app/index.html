@@ -21,7 +21,7 @@
   <!-- endreplace-->
 </head>
 
-<body unresolved fullbleed layout vertical>
+<body unresolved fullbleed layout vertical fit>
   <template is="auto-binding" id="app">
 
     <core-drawer-panel>
@@ -34,7 +34,7 @@
 
         <!-- Drawer Content -->
         <core-menu selected="0">
-          <core-item label="Yo"></core-item>
+          <core-item label="Public Services Units"></core-item>
           <core-item label="Polymer"></core-item>
           <core-item label="App"></core-item>
         </core-menu>
@@ -42,7 +42,7 @@
       </core-header-panel>
 
       <!-- Main -->
-      <core-header-panel main>
+      <core-header-panel main flex vertical layout>
 
         <!-- Main Toolbar -->
         <core-toolbar>
@@ -58,18 +58,17 @@
           <paper-tab data-tabid="6">Summary</paper-tab>
         </paper-tabs>
         <!-- Main Content -->
-
+          <div flex style="overflow:auto;background:rgba(240,240,240,.3)">
+          <core-list data="{{data}}" flex fit id="infoList" height="80px">
+            <template repeat>
+              <div class="row">
+                <core-item>{{model.name}}</core-item>
+                <core-item>{{model.duration}}</core-item>
+              </div>
+            </template>
+          </core-list>
+          </div>
           <google-sheets key="1_JRP59TuVRHHLtTimsK2q3j-4ZtJUbCv4t_FVOpZY8c" tabid="1" clientId="900946452531-ep0bhil5dh3he9o6uil7r6pmr9v9l247.apps.googleusercontent.com" rows="{{rows}}" id="sheet"></google-sheets>
-            <div class="hero-unit">
-              <core-list data="{{GoogleSheetsRows}}" flex id="infoList">
-                <template>
-                  <div class="">
-                    <div>{{model.content}}</div>
-
-                  </div>
-                </template>
-              </core-list>
-        </div>
       </core-header-panel>
     </core-drawer-panel>
 
