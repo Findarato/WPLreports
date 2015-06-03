@@ -1,3 +1,12 @@
+/*
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+*/
+
 'use strict';
 
 // Include Gulp & Tools We'll Use
@@ -6,10 +15,11 @@ var $ = require('gulp-load-plugins')();
 var del = require('del');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
-var pagespeed = require('psi');
 var reload = browserSync.reload;
 var merge = require('merge-stream');
 var path = require('path');
+var fs = require('fs');
+var glob = require('glob');
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -27,13 +37,7 @@ var styleTask = function (stylesPath, srcs) {
   return gulp.src(srcs.map(function(src) {
       return path.join('app', stylesPath, src);
     }))
-    .pipe($.changed(stylesPath, {extension: '.scss'}))
-    .pipe($.rubySass({
-        style: 'expanded',
-        precision: 10
-      })
-      .on('error', console.error.bind(console))
-    )
+    .pipe($.changed(stylesPath, {extension: '.css'}))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe(gulp.dest('.tmp/' + stylesPath))
     .pipe($.if('*.css', $.cssmin()))
@@ -43,11 +47,11 @@ var styleTask = function (stylesPath, srcs) {
 
 // Compile and Automatically Prefix Stylesheets
 gulp.task('styles', function () {
-  return styleTask('styles', ['**/*.css', '*.scss']);
+  return styleTask('styles', ['**/*.css']);
 });
 
 gulp.task('elements', function () {
-  return styleTask('elements', ['**/*.css', '**/*.scss']);
+  return styleTask('elements', ['**/*.css']);
 });
 
 // Lint JavaScript
@@ -80,6 +84,7 @@ gulp.task('copy', function () {
   var app = gulp.src([
     'app/*',
     '!app/test',
+    '!app/precache.json',
     'node_modules/apache-server-configs/dist/.htaccess'
   ], {
     dot: true
@@ -92,11 +97,18 @@ gulp.task('copy', function () {
   var elements = gulp.src(['app/elements/**/*.html'])
     .pipe(gulp.dest('dist/elements'));
 
+  var swBootstrap = gulp.src(['bower_components/platinum-sw/bootstrap/*.js'])
+    .pipe(gulp.dest('dist/elements/bootstrap'));
+
+  var swToolbox = gulp.src(['bower_components/sw-toolbox/*.js'])
+    .pipe(gulp.dest('dist/sw-toolbox'));
+
   var vulcanized = gulp.src(['app/elements/elements.html'])
     .pipe($.rename('elements.vulcanized.html'))
     .pipe(gulp.dest('dist/elements'));
 
-  return merge(app, bower, elements, vulcanized).pipe($.size({title: 'copy'}));
+  return merge(app, bower, elements, vulcanized, swBootstrap, swToolbox)
+    .pipe($.size({title: 'copy'}));
 });
 
 // Copy Web Fonts To Dist
@@ -140,17 +152,34 @@ gulp.task('vulcanize', function () {
     .pipe($.vulcanize({
       dest: DEST_DIR,
       strip: true,
-      inline: true
+      inlineCss: true,
+      inlineScripts: true
     }))
     .pipe(gulp.dest(DEST_DIR))
     .pipe($.size({title: 'vulcanize'}));
+});
+
+// Generate a list of files that should be precached when serving from 'dist'.
+// The list will be consumed by the <platinum-sw-cache> element.
+gulp.task('precache', function (callback) {
+  var dir = 'dist';
+
+  glob('{elements,scripts,styles}/**/*.*', {cwd: dir}, function(error, files) {
+    if (error) {
+      callback(error);
+    } else {
+      files.push('index.html', './', 'bower_components/webcomponentsjs/webcomponents.min.js');
+      var filePath = path.join(dir, 'precache.json');
+      fs.writeFile(filePath, JSON.stringify(files), callback);
+    }
+  });
 });
 
 // Clean Output Directory
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 // Watch Files For Changes & Reload
-gulp.task('serve', ['styles', 'elements'], function () {
+gulp.task('serve', ['styles', 'elements', 'images'], function () {
   browserSync({
     notify: false,
     // Run as an https by uncommenting 'https: true'
@@ -166,8 +195,8 @@ gulp.task('serve', ['styles', 'elements'], function () {
   });
 
   gulp.watch(['app/**/*.html'], reload);
-  gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['app/elements/**/*.{scss,css}'], ['elements', reload]);
+  gulp.watch(['app/styles/**/*.{css}'], ['styles', reload]);
+  gulp.watch(['app/elements/**/*.{css}'], ['elements', reload]);
   gulp.watch(['app/{scripts,elements}/**/*.js'], ['jshint']);
   gulp.watch(['app/images/**/*'], reload);
 });
@@ -190,22 +219,9 @@ gulp.task('default', ['clean'], function (cb) {
     ['copy', 'styles'],
     'elements',
     ['jshint', 'images', 'fonts', 'html'],
-    'vulcanize',
+    'vulcanize', 'precache',
     cb);
 });
-
-// Run PageSpeed Insights
-// Update `url` below to the public URL for your site
-gulp.task('pagespeed', function (cb) {
-  // Update the below URL to the public URL of your site
-  pagespeed.output('example.com', {
-    strategy: 'mobile',
-    // By default we use the PageSpeed Insights free (no API key) tier.
-    // Use a Google Developer API key if you have one: http://goo.gl/RkN0vE
-    // key: 'YOUR_API_KEY'
-  }, cb);
-});
-
 
 // Load tasks for web-component-tester
 // Adds tasks for `gulp test:local` and `gulp test:remote`

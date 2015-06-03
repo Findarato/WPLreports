@@ -15,9 +15,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
   var app = document.querySelector('#app');
 
+  app.displayInstalledToast = function() {
+    document.querySelector('#caching-complete').show();
+  };
+
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
-  app.addEventListener('dom-change', function() {
+  app.addEventListener('template-bound', function() {
     console.log('Our app is ready to rock!');
   });
 
@@ -29,14 +33,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     var drawerPanel = document.querySelector('#paperDrawerPanel');
     drawerPanel.forceNarrow = true;
   });
-
-  // Close drawer after menu item is selected if drawerPanel is narrow
-  app.onMenuSelect = function() {
-    var drawerPanel = document.querySelector('#paperDrawerPanel');
-    if (drawerPanel.narrow) {
-      drawerPanel.closeDrawer();
-    }
-  };
 
 })(document);
 
