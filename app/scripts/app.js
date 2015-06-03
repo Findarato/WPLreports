@@ -1,3 +1,12 @@
+/*
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+*/
+
 (function (document) {
   'use strict';
 
@@ -5,90 +14,34 @@
   // and give it some initial binding values
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
   var app = document.querySelector('#app');
-  app.appName = 'Yo, Polymer App!';
-  app.tabid = 1;
-
-var data = [];
-data.push({
-    name:'Acid Spash',
-    duration:'Instantaneous'
-  });
-
-  data.push({
-    name:'Blade Ward',
-    duration:'1 Round'
-  });
-
-
-
-  var oldData = [
-  {
-    'name': 'Acid Spash',
-    'level': 0,
-    'Casting Time': '1 Action',
-    'source': 'PHB',
-    'range': '60 feet',
-    'components': 'V S',
-    'duration': 'Instantaneous',
-    'description': '',
-    'classes': [
-      'Sorcerer',
-      'Wizard'
-    ]
-  },
-  {
-    'name': 'Blade Ward',
-    'level': 0,
-    'casting Time': '1 Action',
-    'source': 'PHB',
-    'range': 'Self',
-    'components': 'V S',
-    'duration': '1 Round',
-    'description': '',
-    'classes': [
-      'Bard',
-      'Sorcerer',
-      'Warlock',
-      'Wizard'
-    ]
-  }
-];
-app.data = oldData;
 
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
-  app.addEventListener('template-bound', function() {
+  app.addEventListener('dom-change', function() {
     console.log('Our app is ready to rock!');
-    var sheet = document.querySelector('google-sheets');
-    sheet.addEventListener('google-sheet-data', function(e) {
-
-          // this.spreadsheets - list of the user's spreadsheets
-     // this.tab - information on the tab that was fetched
-  //   console.log(this.rows);// - cell row information for the tab that was fetched
-    // console.log(e.detail.type);
-     if(e.detail.type==='rows'){
-    //   var GoogleSheetsRows = this.rows;
-       //var il = document.querySelector('#infoList');
-      // il.setAttribute('data',JSON.stringify( GoogleSheetsRows));
-       //app.GoogleSheetsRows = JSON.stringify(GoogleSheetsRows);
-
-      // console.log(GoogleSheetsRows);
-       //this.rows.forEach(function(item,i){
-        // console.log(item.feed.entry[i]);
-       //var hu = document.querySelector(".hero-unit");
-
-         //hu.innerHTML = hu.innerHTML + "<core-item>"+item.content.$t+"</core-item>";
-
-       //});
-     }
-
-    });
-
-    //sheet.addEventListener('core-error', function(e) {
-     // e.detail.response
-    //});
   });
 
+  // See https://github.com/Polymer/polymer/issues/1381
+  window.addEventListener('WebComponentsReady', function() {
+    document.querySelector('body').removeAttribute('unresolved');
+
+    // Ensure the drawer is hidden on desktop/tablet
+    var drawerPanel = document.querySelector('#paperDrawerPanel');
+    drawerPanel.forceNarrow = true;
+  });
+
+  // Close drawer after menu item is selected if drawerPanel is narrow
+  app.onMenuSelect = function() {
+    var drawerPanel = document.querySelector('#paperDrawerPanel');
+    if (drawerPanel.narrow) {
+      drawerPanel.closeDrawer();
+    }
+  };
+
+})(document);
+
+// TODO: Decide if we still want to suggest wrapping as it requires
+// using webcomponents.min.js.
 // wrap document so it plays nice with other libraries
 // http://www.polymer-project.org/platform/shadow-dom.html#wrappers
-})(wrap(document));
+// )(wrap(document));
