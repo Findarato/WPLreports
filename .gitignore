@@ -1,6 +1,5 @@
-node_modules
-dist
 test/temp
-bower_components
+.sass-cache
 .tmp
-test/bower_components/
+.vagrant
+Vagrant
