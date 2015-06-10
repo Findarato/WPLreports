@@ -1,7 +1,11 @@
 {
   "name": "polymer-starter-kit",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+   "lodash": "~3.9.3",
+    "immutable": "~3.7.3",
+    "es6-promise": "~2.3.0"
+},
   "scripts": {
     "deps": "npm install -g gulp && npm install -g bower && npm install && bower install"
   },
