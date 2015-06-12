@@ -20,7 +20,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
   <!-- Chrome for Android theme color -->
-  <meta name="theme-color" content="#303F9F">
+  <meta name="theme-color" content="#03A9F4">
 
   <!-- Web Application Manifest -->
   <link rel="manifest" href="manifest.json">
@@ -44,6 +44,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/welcome.css">
   <!-- endbuild-->
 
   <!-- build:js bower_components/webcomponentsjs/webcomponents.min.js -->
@@ -58,7 +59,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <body unresolved class="fullbleed layout vertical">
   <template is="dom-bind" id="app">
 
-    <paper-drawer-panel id="paperDrawerPanel" responsive-width="1280px"> 
+    <paper-drawer-panel id="paperDrawerPanel" responsive-width="1280px">
       <div drawer>
 
         <!-- Drawer Toolbar -->
@@ -73,14 +74,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <span>Home</span>
               </a>
 
-              <a data-route="users" href="/circulation">
+              <a data-route="circ" href="/circ">
                 <iron-icon icon="info"></iron-icon>
                 <span>Circulation</span>
               </a>
- 
-              <a data-route="contact" href="/PSU">
+
+              <a data-route="psu" href="/psu">
                 <iron-icon icon="mail"></iron-icon>
-                <span>PSU</span>
+                <span>psu</span>
               </a>
           </paper-menu>
       </div>
@@ -107,25 +108,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <section data-route="home">
               <paper-material elevation="1">
-                <my-greeting></my-greeting>
-
-                <p class="paper-font-subhead">You now have:</p>
-                <my-list></my-list>
-
-                <p class="paper-font-body2">Looking for more Web App layouts? Check out our <a href="https://github.com/PolymerElements/app-layout-templates">layouts</a> collection. You can also <a href="http://polymerelements.github.io/app-layout-templates/">preview</a> them live.</p>
+                <h1 class="paper-font-display1">
+                  Welcome to the reporting Module.
+                </h1>
+                  <iframe src="https://docs.google.com/spreadsheets/d/1PxSpzQZTRsT3U3J93NKZo52e4j7nqjBD5sseQhB79GY/pubchart?oid=308618936&amp;format=interactive"></iframe>
               </paper-material>
-              
+
              <paper-material></paper-material>
-             
+
             </section>
 
-            <section data-route="circulation">
+            <section data-route="circ">
               <paper-material elevation="1">
                 <h2 class="paper-font-display2">Circulation Report</h2>
               </paper-material>
 
               <paper-material>
-              
+
               </paper-material>
 
 
@@ -168,6 +167,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </template>
 
   <!-- build:js scripts/app.js -->
+  <script src="/bower_components/jquery-2.1.4.min/index.js"></script>
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
 </body>

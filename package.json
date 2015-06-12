@@ -1,6 +1,6 @@
 {
-  "name": "polymer-starter-kit",
-  "version": "0.0.0",
+  "name": "WPL-Reports",
+  "version": "0.3.0",
   "dependencies": {
    "lodash": "~3.9.3",
     "immutable": "~3.7.3",

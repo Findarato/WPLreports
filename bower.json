@@ -16,7 +16,9 @@
     "paper-toast": "PolymerElements/paper-toast#^1.0.0",
     "paper-toolbar": "PolymerElements/paper-toolbar#^1.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jquery-2.1.4.min": "http://code.jquery.com/jquery-2.1.4.min.js"
+  },
   "resolutions": {
     "polymer": "^1.0.0",
     "webcomponentsjs": "^0.7.2",

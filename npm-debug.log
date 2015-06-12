@@ -1,0 +1,200 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/bin/npm', 'install', 'fsevents', '--save-dev', '-g' ]
+2 info using npm@1.3.6
+3 info using node@v0.10.36
+4 verbose node symlink /bin/node
+5 verbose cache add [ 'fsevents', null ]
+6 verbose cache add name=undefined spec="fsevents" args=["fsevents",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'fsevents',
+7 verbose parsed url   path: 'fsevents',
+7 verbose parsed url   href: 'fsevents' }
+8 silly lockFile b72a3cea-fsevents fsevents
+9 verbose lock fsevents /root/.npm/b72a3cea-fsevents.lock
+10 silly lockFile b72a3cea-fsevents fsevents
+11 silly lockFile b72a3cea-fsevents fsevents
+12 verbose addNamed [ 'fsevents', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile 436f77be-fsevents fsevents@
+15 verbose lock fsevents@ /root/.npm/436f77be-fsevents.lock
+16 silly addNameRange { name: 'fsevents', range: '*', hasData: false }
+17 verbose url raw fsevents
+18 verbose url resolving [ 'https://registry.npmjs.org/', './fsevents' ]
+19 verbose url resolved https://registry.npmjs.org/fsevents
+20 info trying registry request attempt 1 at 12:54:03
+21 http GET https://registry.npmjs.org/fsevents
+22 http 200 https://registry.npmjs.org/fsevents
+23 silly registry.get cb [ 200,
+23 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+23 silly registry.get     etag: '"4AG3XH5PWA57L453S6H9ZZSIL"',
+23 silly registry.get     'content-type': 'application/json',
+23 silly registry.get     'cache-control': 'max-age=60',
+23 silly registry.get     'content-length': '17989',
+23 silly registry.get     'accept-ranges': 'bytes',
+23 silly registry.get     date: 'Fri, 12 Jun 2015 17:52:59 GMT',
+23 silly registry.get     via: '1.1 varnish',
+23 silly registry.get     age: '49',
+23 silly registry.get     connection: 'keep-alive',
+23 silly registry.get     'x-served-by': 'cache-dfw1828-DFW',
+23 silly registry.get     'x-cache': 'HIT',
+23 silly registry.get     'x-cache-hits': '1',
+23 silly registry.get     'x-timer': 'S1434131579.227810,VS0,VE0',
+23 silly registry.get     vary: 'Accept' } ]
+24 silly addNameRange number 2 { name: 'fsevents', range: '*', hasData: true }
+25 silly addNameRange versions [ 'fsevents',
+25 silly addNameRange   [ '0.1.1',
+25 silly addNameRange     '0.1.3',
+25 silly addNameRange     '0.1.4',
+25 silly addNameRange     '0.1.5',
+25 silly addNameRange     '0.1.6',
+25 silly addNameRange     '0.2.0',
+25 silly addNameRange     '0.3.0',
+25 silly addNameRange     '0.3.1',
+25 silly addNameRange     '0.3.2',
+25 silly addNameRange     '0.3.3',
+25 silly addNameRange     '0.3.4',
+25 silly addNameRange     '0.3.5',
+25 silly addNameRange     '0.3.6' ] ]
+26 verbose addNamed [ 'fsevents', '0.3.6' ]
+27 verbose addNamed [ '0.3.6', '0.3.6' ]
+28 silly lockFile 82b17035-fsevents-0-3-6 fsevents@0.3.6
+29 verbose lock fsevents@0.3.6 /root/.npm/82b17035-fsevents-0-3-6.lock
+30 silly lockFile ce08e273--org-fsevents-fsevents-0-3-6-tgz https://registry.npmjs.org/fsevents/-/fsevents-0.3.6.tgz
+31 verbose lock https://registry.npmjs.org/fsevents/-/fsevents-0.3.6.tgz /root/.npm/ce08e273--org-fsevents-fsevents-0-3-6-tgz.lock
+32 verbose addRemoteTarball [ 'https://registry.npmjs.org/fsevents/-/fsevents-0.3.6.tgz',
+32 verbose addRemoteTarball   '03f029087b5388c756ef0d6707cf3656dba95c84' ]
+33 info retry fetch attempt 1 at 12:54:03
+34 verbose fetch to= /root/tmp/npm-27374-X6HKmexV/1434131643576-0.8022745605558157/tmp.tgz
+35 http GET https://registry.npmjs.org/fsevents/-/fsevents-0.3.6.tgz
+36 http 200 https://registry.npmjs.org/fsevents/-/fsevents-0.3.6.tgz
+37 verbose tar unpack /root/tmp/npm-27374-X6HKmexV/1434131643576-0.8022745605558157/tmp.tgz
+38 silly lockFile 5da263bd-43576-0-8022745605558157-package tar:///root/tmp/npm-27374-X6HKmexV/1434131643576-0.8022745605558157/package
+39 verbose lock tar:///root/tmp/npm-27374-X6HKmexV/1434131643576-0.8022745605558157/package /root/.npm/5da263bd-43576-0-8022745605558157-package.lock
+40 silly lockFile 224e77c6-43576-0-8022745605558157-tmp-tgz tar:///root/tmp/npm-27374-X6HKmexV/1434131643576-0.8022745605558157/tmp.tgz
+41 verbose lock tar:///root/tmp/npm-27374-X6HKmexV/1434131643576-0.8022745605558157/tmp.tgz /root/.npm/224e77c6-43576-0-8022745605558157-tmp-tgz.lock
+42 silly gunzTarPerm modes [ '755', '644' ]
+43 silly gunzTarPerm extractEntry package.json
+44 silly gunzTarPerm extractEntry .npmignore
+45 silly gunzTarPerm extractEntry LICENSE
+46 silly gunzTarPerm extractEntry fsevents.js
+47 silly gunzTarPerm extractEntry Readme.md
+48 silly gunzTarPerm extractEntry binding.gyp
+49 silly gunzTarPerm extractEntry .tern-project
+50 silly gunzTarPerm extractEntry fsevents-0.3.0.tgz
+51 silly gunzTarPerm extractEntry fsevents.cc
+52 silly gunzTarPerm extractEntry .travis.yml
+53 silly gunzTarPerm extractEntry src/async.cc
+54 silly gunzTarPerm extractEntry src/constants.cc
+55 silly gunzTarPerm extractEntry src/locking.cc
+56 silly gunzTarPerm extractEntry src/methods.cc
+57 silly gunzTarPerm extractEntry src/storage.cc
+58 silly gunzTarPerm extractEntry src/thread.cc
+59 silly gunzTarPerm extractEntry CHANGELOG.md
+60 silly gunzTarPerm extractEntry test/fsevents.js
+61 silly gunzTarPerm extractEntry test/function.js
+62 silly lockFile 5da263bd-43576-0-8022745605558157-package tar:///root/tmp/npm-27374-X6HKmexV/1434131643576-0.8022745605558157/package
+63 silly lockFile 5da263bd-43576-0-8022745605558157-package tar:///root/tmp/npm-27374-X6HKmexV/1434131643576-0.8022745605558157/package
+64 silly lockFile 224e77c6-43576-0-8022745605558157-tmp-tgz tar:///root/tmp/npm-27374-X6HKmexV/1434131643576-0.8022745605558157/tmp.tgz
+65 silly lockFile 224e77c6-43576-0-8022745605558157-tmp-tgz tar:///root/tmp/npm-27374-X6HKmexV/1434131643576-0.8022745605558157/tmp.tgz
+66 verbose tar pack [ '/root/.npm/fsevents/0.3.6/package.tgz',
+66 verbose tar pack   '/root/tmp/npm-27374-X6HKmexV/1434131643576-0.8022745605558157/package' ]
+67 verbose tarball /root/.npm/fsevents/0.3.6/package.tgz
+68 verbose folder /root/tmp/npm-27374-X6HKmexV/1434131643576-0.8022745605558157/package
+69 silly lockFile 5da263bd-43576-0-8022745605558157-package tar:///root/tmp/npm-27374-X6HKmexV/1434131643576-0.8022745605558157/package
+70 verbose lock tar:///root/tmp/npm-27374-X6HKmexV/1434131643576-0.8022745605558157/package /root/.npm/5da263bd-43576-0-8022745605558157-package.lock
+71 silly lockFile 618bb481-t-npm-fsevents-0-3-6-package-tgz tar:///root/.npm/fsevents/0.3.6/package.tgz
+72 verbose lock tar:///root/.npm/fsevents/0.3.6/package.tgz /root/.npm/618bb481-t-npm-fsevents-0-3-6-package-tgz.lock
+73 silly lockFile 5da263bd-43576-0-8022745605558157-package tar:///root/tmp/npm-27374-X6HKmexV/1434131643576-0.8022745605558157/package
+74 silly lockFile 5da263bd-43576-0-8022745605558157-package tar:///root/tmp/npm-27374-X6HKmexV/1434131643576-0.8022745605558157/package
+75 silly lockFile 618bb481-t-npm-fsevents-0-3-6-package-tgz tar:///root/.npm/fsevents/0.3.6/package.tgz
+76 silly lockFile 618bb481-t-npm-fsevents-0-3-6-package-tgz tar:///root/.npm/fsevents/0.3.6/package.tgz
+77 silly lockFile 139ef657-root-npm-fsevents-0-3-6-package /root/.npm/fsevents/0.3.6/package
+78 verbose lock /root/.npm/fsevents/0.3.6/package /root/.npm/139ef657-root-npm-fsevents-0-3-6-package.lock
+79 silly lockFile 139ef657-root-npm-fsevents-0-3-6-package /root/.npm/fsevents/0.3.6/package
+80 silly lockFile 139ef657-root-npm-fsevents-0-3-6-package /root/.npm/fsevents/0.3.6/package
+81 verbose tar unpack /root/.npm/fsevents/0.3.6/package.tgz
+82 silly lockFile a9e692ae--root-npm-fsevents-0-3-6-package tar:///root/.npm/fsevents/0.3.6/package
+83 verbose lock tar:///root/.npm/fsevents/0.3.6/package /root/.npm/a9e692ae--root-npm-fsevents-0-3-6-package.lock
+84 silly lockFile 618bb481-t-npm-fsevents-0-3-6-package-tgz tar:///root/.npm/fsevents/0.3.6/package.tgz
+85 verbose lock tar:///root/.npm/fsevents/0.3.6/package.tgz /root/.npm/618bb481-t-npm-fsevents-0-3-6-package-tgz.lock
+86 silly gunzTarPerm modes [ '755', '644' ]
+87 silly gunzTarPerm extractEntry package.json
+88 silly gunzTarPerm extractEntry .npmignore
+89 silly gunzTarPerm extractEntry LICENSE
+90 silly gunzTarPerm extractEntry fsevents.js
+91 silly gunzTarPerm extractEntry test/fsevents.js
+92 silly gunzTarPerm extractEntry test/function.js
+93 silly gunzTarPerm extractEntry Readme.md
+94 silly gunzTarPerm extractEntry .tern-project
+95 silly gunzTarPerm extractEntry fsevents-0.3.0.tgz
+96 silly gunzTarPerm extractEntry fsevents.cc
+97 silly gunzTarPerm extractEntry .travis.yml
+98 silly gunzTarPerm extractEntry CHANGELOG.md
+99 silly gunzTarPerm extractEntry src/async.cc
+100 silly gunzTarPerm extractEntry src/constants.cc
+101 silly gunzTarPerm extractEntry src/locking.cc
+102 silly gunzTarPerm extractEntry src/methods.cc
+103 silly gunzTarPerm extractEntry src/storage.cc
+104 silly gunzTarPerm extractEntry src/thread.cc
+105 silly gunzTarPerm extractEntry binding.gyp
+106 silly lockFile a9e692ae--root-npm-fsevents-0-3-6-package tar:///root/.npm/fsevents/0.3.6/package
+107 silly lockFile a9e692ae--root-npm-fsevents-0-3-6-package tar:///root/.npm/fsevents/0.3.6/package
+108 silly lockFile 618bb481-t-npm-fsevents-0-3-6-package-tgz tar:///root/.npm/fsevents/0.3.6/package.tgz
+109 silly lockFile 618bb481-t-npm-fsevents-0-3-6-package-tgz tar:///root/.npm/fsevents/0.3.6/package.tgz
+110 verbose chmod /root/.npm/fsevents/0.3.6/package.tgz 644
+111 verbose chown /root/.npm/fsevents/0.3.6/package.tgz [ 0, 0 ]
+112 silly lockFile ce08e273--org-fsevents-fsevents-0-3-6-tgz https://registry.npmjs.org/fsevents/-/fsevents-0.3.6.tgz
+113 silly lockFile ce08e273--org-fsevents-fsevents-0-3-6-tgz https://registry.npmjs.org/fsevents/-/fsevents-0.3.6.tgz
+114 silly lockFile 82b17035-fsevents-0-3-6 fsevents@0.3.6
+115 silly lockFile 82b17035-fsevents-0-3-6 fsevents@0.3.6
+116 silly lockFile 436f77be-fsevents fsevents@
+117 silly lockFile 436f77be-fsevents fsevents@
+118 silly resolved [ { name: 'fsevents',
+118 silly resolved     version: '0.3.6',
+118 silly resolved     description: 'Native Access to Mac OS-X FSEvents',
+118 silly resolved     main: 'fsevents.js',
+118 silly resolved     dependencies: { nan: '^1.8.0' },
+118 silly resolved     os: [ 'darwin' ],
+118 silly resolved     engines: { node: '>=0.8.0' },
+118 silly resolved     scripts:
+118 silly resolved      { install: 'node-gyp rebuild',
+118 silly resolved        test: 'export PATH=$PATH:`pwd`/node_nodules/.bin/ && tap ./test' },
+118 silly resolved     repository:
+118 silly resolved      { type: 'git',
+118 silly resolved        url: 'https://github.com/strongloop/fsevents.git' },
+118 silly resolved     keywords: [ 'fsevents', 'mac' ],
+118 silly resolved     author: { name: 'Philipp Dunkel', email: 'pip@pipobscure.com' },
+118 silly resolved     license: 'MIT',
+118 silly resolved     gypfile: true,
+118 silly resolved     bugs: { url: 'https://github.com/strongloop/fsevents/issues' },
+118 silly resolved     homepage: 'https://github.com/strongloop/fsevents',
+118 silly resolved     devDependencies: { tap: '~0.4.8' },
+118 silly resolved     readme: '# FSEvents [![NPM](https://nodei.co/npm/fsevents.png)](https://nodei.co/npm/fsevents/)\n## Native Access to Mac OS-X FSEvents\n\n * [Node.js](http://nodejs.org/)\n * [Github repo](https://github.com/strongloop/fsevents.git)\n * [Module Site](https://github.com/strongloop/fsevents)\n * [NPM Page](https://npmjs.org/package/fsevents)\n\n## Installation\n\n\t$ npm install -g node-gyp\n\t$\tgit clone https://github.com/strongloop/fsevents.git fsevents\n\t$ cd fsevents\n\t$ node-gyp configure build\n\nOR SIMPLY\n\n\t$ npm install fsevents\n\n## Usage\n\n```js\nvar fsevents = require(\'fsevents\');\nvar watcher = fsevents(__dirname);\nwatcher.on(\'fsevent\', function(path, flags, id) { }); // RAW Event as emitted by OS-X\nwatcher.on(\'change\', function(path, info) {}); // Common Event for all changes\nwatcher.start() // To start observation\nwatcher.stop()  // To end observation\n```\n\n### Events\n\n * *fsevent* - RAW Event as emitted by OS-X\n * *change* - Common Event for all changes\n * *created* - A File-System-Item has been created\n * *deleted* - A File-System-Item has been deleted\n * *modified* - A File-System-Item has been modified\n * *moved-out* - A File-System-Item has been moved away from this location\n * *moved-in* - A File-System-Item has been moved into this location\n\nAll events except *fsevent* take an *info* object as the second parameter of the callback. The structure of this object is:\n\n```json\n{\n  "event": "<event-type>",\n  "id": <eventi-id>,\n  "path": "<path-that-this-is-about>",\n  "type": "<file|directory|symlink>",\n  "changes": {\n    "inode": true, // Has the iNode Meta-Information changed\n    "finder": false, // Has the Finder Meta-Data changed\n    "access": false, // Have the access permissions changed\n    "xattrs": false // Have the xAttributes changed\n  },\n  "flags": <raw-flags>\n}\n```\n\n## MIT License\n\nCopyright (C) 2010-2014 Philipp Dunkel\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the "Software"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n',
+118 silly resolved     readmeFilename: 'Readme.md',
+118 silly resolved     _id: 'fsevents@0.3.6',
+118 silly resolved     dist: { shasum: 'e7f2945892ccc0482eeea710ee36eb2ffdfbd806' },
+118 silly resolved     _from: 'fsevents@',
+118 silly resolved     _resolved: 'https://registry.npmjs.org/fsevents/-/fsevents-0.3.6.tgz' } ]
+119 info install fsevents@0.3.6 into /lib
+120 info installOne fsevents@0.3.6
+121 error notsup Unsupported
+121 error notsup Not compatible with your operating system or architecture: fsevents@0.3.6
+121 error notsup Valid OS:    darwin
+121 error notsup Valid Arch:  any
+121 error notsup Actual OS:   linux
+121 error notsup Actual Arch: x64
+122 error System Linux 4.0.4-301.fc22.x86_64
+123 error command "node" "/bin/npm" "install" "fsevents" "--save-dev" "-g"
+124 error cwd /home/joe/Documents/webapps/WPLreports
+125 error node -v v0.10.36
+126 error npm -v 1.3.6
+127 error code EBADPLATFORM
+128 verbose exit [ 1, true ]
