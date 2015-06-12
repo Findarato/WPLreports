@@ -3,7 +3,8 @@
 Vagrant.configure(2) do |config|
 
   config.vm.box = "f22atomic"
-
+  config.vm.network "forwarded_port", guest: 3000, host: 3000
+  config.vm.network "forwarded_port", guest: 3001, host: 3001
   config.vm.provider "libvirt" do |libvirt|
     libvirt.driver = "kvm"
     libvirt.memory = 512
