@@ -15,8 +15,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     // We use Page.js for routing. This is a Micro
     // client-side router inspired by the Express router
     // More info: https://visionmedia.github.io/page.js/
+
     page('/', function () {
       app.route = 'home';
+
     });
 
     page('/psu', function () {
@@ -25,6 +27,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     page('/circ', function () {
       app.route = 'circ';
+    //  app.params = data.params;
+    });
+
+    page('/it', function () {
+      app.route = 'it';
     //  app.params = data.params;
     });
 
@@ -40,7 +47,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     // add #! before urls
     page({
-      hashbang: false
+      hashbang: true
     });
 
   });

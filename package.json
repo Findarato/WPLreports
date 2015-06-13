@@ -2,10 +2,10 @@
   "name": "WPL-Reports",
   "version": "0.3.0",
   "dependencies": {
-   "lodash": "~3.9.3",
+    "lodash": "~3.9.3",
     "immutable": "~3.7.3",
     "es6-promise": "~2.3.0"
-},
+  },
   "scripts": {
     "deps": "npm install -g gulp && npm install -g bower && npm install && bower install"
   },
@@ -33,6 +33,7 @@
     "gulp-useref": "^1.1.2",
     "gulp-vulcanize": "^6.0.0",
     "jshint-stylish": "^1.0.1",
+    "lodash": "^3.9.3",
     "merge-stream": "^0.1.7",
     "opn": "^1.0.0",
     "require-dir": "^0.3.0",

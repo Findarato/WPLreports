@@ -3,4 +3,4 @@ test/temp
 .tmp
 .vagrant
 Vagrant
-
+node_modules

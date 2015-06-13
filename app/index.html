@@ -79,11 +79,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <span>Circulation</span>
               </a>
 
+              <a data-route="it" href="/it">
+                <iron-icon icon="info"></iron-icon>
+                <span>I.T.</span>
+              </a>
+
               <a data-route="psu" href="/psu">
                 <iron-icon icon="mail"></iron-icon>
                 <span>psu</span>
               </a>
           </paper-menu>
+          <google-signin client-id="900946452531-ep0bhil5dh3he9o6uil7r6pmr9v9l247.apps.googleusercontent.com"></google-signin>
       </div>
       <paper-header-panel class="main" main mode="waterfall-tall">
         <!-- Main Toolbar -->
@@ -111,10 +117,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <h1 class="paper-font-display1">
                   Welcome to the reporting Module.
                 </h1>
-                  <iframe src="https://docs.google.com/spreadsheets/d/1PxSpzQZTRsT3U3J93NKZo52e4j7nqjBD5sseQhB79GY/pubchart?oid=308618936&amp;format=interactive"></iframe>
+
+
+              <database-use></database-use>
               </paper-material>
 
-             <paper-material></paper-material>
+             <paper-material>
+             more stuff
+             </paper-material>
 
             </section>
 
@@ -167,7 +177,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </template>
 
   <!-- build:js scripts/app.js -->
-  <script src="/bower_components/jquery-2.1.4.min/index.js"></script>
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
 </body>

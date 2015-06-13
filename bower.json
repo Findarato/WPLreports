@@ -14,7 +14,9 @@
     "iron-icon": "polymerelements/iron-icon#^1.0.0",
     "iron-image": "PolymerElements/iron-image#^1.0.0",
     "paper-toast": "PolymerElements/paper-toast#^1.0.0",
-    "paper-toolbar": "PolymerElements/paper-toolbar#^1.0.0"
+    "paper-toolbar": "PolymerElements/paper-toolbar#^1.0.0",
+    "google-chart": "GoogleWebComponents/google-chart#^1.0.0",
+    "google-apis": "~1.0.1"
   },
   "devDependencies": {
     "jquery-2.1.4.min": "http://code.jquery.com/jquery-2.1.4.min.js"
