@@ -119,7 +119,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 </h1>
 
 
-              <database-use></database-use>
+              <div id="database-use" style="height: 300px">
+
+              </div>
+
+              <!--<google-sheets
+              client-id="900946452531-ep0bhil5dh3he9o6uil7r6pmr9v9l247.apps.googleusercontent.com"
+              key='1PxSpzQZTRsT3U3J93NKZo52e4j7nqjBD5sseQhB79GY' tabid='1' >    </google-sheets>-->
+
+
+
               </paper-material>
 
              <paper-material>
@@ -132,11 +141,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <paper-material elevation="1">
                 <h2 class="paper-font-display2">Circulation Report</h2>
               </paper-material>
-
-              <paper-material>
-
-              </paper-material>
-
 
             </section>
 
@@ -165,6 +169,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                  text="Caching complete! This app will work offline.">
     </paper-toast>
 
+<!--
     <platinum-sw-register auto-register
                           clients-claim
                           skip-waiting
@@ -173,9 +178,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                          precache-file="precache.json">
       </platinum-sw-cache>
     </platinum-sw-register>
+-->
+
 
   </template>
-
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="scripts/highcharts.js"></script>
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
   <!-- endbuild-->

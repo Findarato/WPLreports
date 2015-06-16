@@ -1,5 +1,6 @@
-<script src="../../bower_components/jquery-2.1.4.min/index.js"></script>
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+
 
 <dom-module id="database-use">
     <style>
@@ -18,31 +19,19 @@
 <!--    <google-sheets key="1PxSpzQZTRsT3U3J93NKZo52e4j7nqjBD5sseQhB79GY" client-id="900946452531-ep0bhil5dh3he9o6uil7r6pmr9v9l247.apps.googleusercontent.com" tab-id="1"></google-sheets>-->
 
 <template>
-  <google-chart
-    type='area'
-    options='{"title": "Days in a month"}'
-    cols='[{"label": "Month", "type": "string"},{"label": "Days", "type": "number"}]'
-    rows='[["Jan", 31],["Feb", 28],["Mar", 31],["Apr", 30],["May", 31],["Jun", 30]]'>
-  </google-chart>
   <google-sheets
-    key="1PxSpzQZTRsT3U3J93NKZo52e4j7nqjBD5sseQhB79GY" tabid="1" rows="{{rows}}"
+    key='1PxSpzQZTRsT3U3J93NKZo52e4j7nqjBD5sseQhB79GY' tabid='1' rows='{{rows}}'
     clientId="900946452531-ep0bhil5dh3he9o6uil7r6pmr9v9l247.apps.googleusercontent.com">
   </google-sheets>
   <template repeat="{{row in rows}}">
     <paper-item>{{row.gsx$overdrive.$t}}</paper-item>
   </template>
 </template>
-
-
-
-
-
-
-    <!--<iframe src="https://docs.google.com/spreadsheets/d/1PxSpzQZTRsT3U3J93NKZo52e4j7nqjBD5sseQhB79GY/pubchart?oid=308618936&amp;format=interactive"></iframe>-->
-
 </dom-module>
   <script>
   (function() {
+    var chart = $('google-chart');
+    console.log(chart);
     //var sheet = document.querySelector('google-sheets');
     //sheet.addEventListener('google-sheet-data',function(e){
       // this.spreadsheets - list of the user's spreadsheets
@@ -52,9 +41,8 @@
     //});
     var queryString = encodeURIComponent('SELECT A, D, E, F, G, H OFFSET 1');
     queryString = 'https://docs.google.com/spreadsheets/d/1PxSpzQZTRsT3U3J93NKZo52e4j7nqjBD5sseQhB79GY/gviz/tq?sheet=Sheet1&headers=1&tq=' + queryString;
-    var chart = document.querySelector('google-chart');
 //    chart.data = queryString;
-    $("google-chart").attr({"data":queryString});
+    //$("google-chart").attr({"data":queryString});
     Polymer({
       is: 'database-use'
     });
