@@ -1,1 +1,1 @@
-body{background:#fafafa;font-family:Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;color:#333}paper-material{height:400px;max-width:640px;margin:16px auto;background-color:#fff}
+body{background:#fafafa;font-family:Roboto,'Helvetica Neue',Helvetica,Arial,sans-serif;color:#333}section paper-material{height:400px;max-width:640px;margin:16px auto;background-color:#fff}.fabHolder{position:absolute;display:block}paper-fab:not([style-scope]):not(.style-scope){display:block;margin-bottom:24px;margin-left:auto;margin-right:auto}

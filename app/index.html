@@ -117,26 +117,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <h1 class="paper-font-display1">
                   Welcome to the reporting Module.
                 </h1>
-
-
-              <div id="database-use" style="height: 300px">
-
-              </div>
-
-              <!--<google-sheets
-              client-id="900946452531-ep0bhil5dh3he9o6uil7r6pmr9v9l247.apps.googleusercontent.com"
-              key='1PxSpzQZTRsT3U3J93NKZo52e4j7nqjBD5sseQhB79GY' tabid='1' >    </google-sheets>-->
-
-
-
+              <div id="database-use" style="height: 300px"></div>
               </paper-material>
-
              <paper-material>
              more stuff
              </paper-material>
-
             </section>
-
             <section data-route="circ">
               <paper-material elevation="1">
                 <h2 class="paper-font-display2">Circulation Report</h2>
@@ -160,8 +146,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </paper-material>
             </section>
 
+            <section data-route="it">
+              <paper-material elevation="1">
+                <h2 class="paper-font-display2">IT</h2>
+                <p>This is the contact section</p>
+              </paper-material>
+            </section>
+
+
+
           </iron-pages>
+          <div class="fabHolder vertical-section">
+            <paper-fab mini icon="add"></paper-fab>
+            <paper-fab mini icon="add"></paper-fab>
+            <paper-fab mini icon="add"></paper-fab>
+            <paper-fab mini icon="add"></paper-fab>
+            <paper-fab icon="add"></paper-fab>
+          </div>
+
           </paper-header-panel>
+
     </paper-drawer-panel>
 
     <paper-toast id="caching-complete"
@@ -179,10 +183,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </platinum-sw-cache>
     </platinum-sw-register>
 -->
-
-
   </template>
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <style>
+  .fabHolder{
+    position:absolute;
+    right:3em;
+    bottom:3em;
+  }
+  .fabHolder paper-fab:[icon="add"]:hover{
+
+  }
+  </style>
+  <script src="https://www.google.com/jsapi"></script>
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
   <script src="scripts/highcharts.js"></script>
   <!-- build:js scripts/app.js -->

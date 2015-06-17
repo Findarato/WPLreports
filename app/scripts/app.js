@@ -44,29 +44,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 })(document);
 
 
-  function drawGID() {
-  var queryString = encodeURIComponent('SELECT A, D, E, F, G, H OFFSET 1');
-
-  var query = new google.visualization.Query(
-      'https://docs.google.com/spreadsheets/d/1PxSpzQZTRsT3U3J93NKZo52e4j7nqjBD5sseQhB79GY/gviz/tq?gid=0&headers=1&tq=' + queryString);
-  query.send(handleQueryResponse);
-  }
-
-  function handleQueryResponse(response) {
-    if (response.isError()) {
-      alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-      return;
-    }
-
-    var data = response.getDataTable();
-    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-    console.log(data);
-    chart.draw(data, { height: 400 });
-  }
-
-
-
-
 $( document ).ready(function(){
 /*
 jQuery.ajax({
@@ -81,25 +58,10 @@ jQuery.ajax({
   });
 */
 
-  google.load('visualization', '1', {'packages':['corechart']});
 
 
 
-  grawGID();
 
-  var sheet = document.querySelector('google-sheets');
-  sheet.addEventListener('google-sheet-data', function(e) {
-    console.log(e.type);
-   // this.spreadsheets - list of the user's spreadsheets
-   // this.tab - information on the tab that was fetched
-   // this.rows - cell row information for the tab that was fetched
-    console.log(this.rows);
-    console.log(this.rows.length());
-  });
-
-  sheet.addEventListener('core-error', function(e) {
-   // e.detail.response
-  });
   $('#database-use').highcharts({
         chart: {
             type: 'area'
