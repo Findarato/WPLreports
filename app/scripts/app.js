@@ -45,18 +45,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
 $( document ).ready(function(){
-/*
+
 jQuery.ajax({
-    url: 'https://docs.google.com/spreadsheets/d/1PxSpzQZTRsT3U3J93NKZo52e4j7nqjBD5sseQhB79GY/gviz/tq',
+    url: '/php/getOnlineContent.php',
     dataType:'json',
     context: document.body,
-    data:{'sheet':'Sheet1','headers':'1','q':'SELECT A, D, E, F, G, H OFFSET 1'},
-    crossDomain:true,
+//    data:{'sheet':'Sheet1','headers':'1','q':'SELECT A, D, E, F, G, H OFFSET 1'},
     //headers:
   }).success(function(json){
     console.log(json);
   });
-*/
+
 
 
 

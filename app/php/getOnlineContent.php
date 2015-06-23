@@ -1,10 +1,18 @@
 <?Php
-include "databaseConnect.php";
-$mysqli = mysqli_connect($host,$user,$password,$dataabse);
+include "dbConnect.inc.php";
+$mysqli = mysqli_connect($host,$user,$password,$database);
 
-$res = mysqli_query($mysqli,"SELECT * FROM onlineContent ORDER BY date DESC;");
-$assoc = mysqli_fetch_assoc($res);
+$query = "SELECT * FROM onlineContent ORDER BY date DESC;";
 
-print "<pre>";
-echo json_encode($assoc);
-print "</pre>";
+$res = $mysqli->query($query);
+$json = array();
+
+while($row = $res->fetch_assoc()){
+
+   $json["dates"][] = $row["date"];
+   $json["data"][$row["category"]][] = $row["amount"];
+}
+
+
+
+print json_encode($json);
