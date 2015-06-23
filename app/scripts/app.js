@@ -46,15 +46,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 $( document ).ready(function(){
 
+var totalOnlineContent = {};
 jQuery.ajax({
     url: '/php/getOnlineContent.php',
     dataType:'json',
     context: document.body,
 //    data:{'sheet':'Sheet1','headers':'1','q':'SELECT A, D, E, F, G, H OFFSET 1'},
     //headers:
-  }).success(function(json){
-    console.log(json);
+  }).done(function(json){
+    totalOnlineContent = json;
+    console.log(json.Overdrive[0]);
   });
+
 
 
 
@@ -72,7 +75,7 @@ jQuery.ajax({
             text: 'Source: Wikipedia.org'
         },
         xAxis: {
-            categories: ['1750', '1800', '1850', '1900', '1950', '1999', '2050'],
+            categories: totalOnlineContent.dates,
             tickmarkPlacement: 'on',
             title: {
                 enabled: false
@@ -103,6 +106,9 @@ jQuery.ajax({
                 }
             }
         },
+
+        series:totalOnlineContent.data
+        /*
         series: [{
             name: 'Asia',
             data: [502, 635, 809, 947, 1402, 3634, 5268]
@@ -119,6 +125,7 @@ jQuery.ajax({
             name: 'Oceania',
             data: [2, 2, 2, 6, 13, 30, 46]
         }]
+        */
     });
 
 });

@@ -9,6 +9,6 @@ sudo npm install -g n
 sudo n stable
 
 
-sudo npm install -g inherits diff yo bower grunt-cli gulp gulp-webp  --save-dev
+sudo npm install -g  yo bower grunt-cli gulp gulp-webp  --save-dev
 sudo npm install -g generator-polymer
 
