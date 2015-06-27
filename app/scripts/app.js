@@ -7,6 +7,14 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
+
+function renderOnlineContent(totalOnlineContent){
+
+
+}
+
+
+
 (function (document) {
   'use strict';
 
@@ -30,17 +38,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     document.querySelector('body').removeAttribute('unresolved');
 
   });
-  //$().
-
-
-  //Setup database use on front page
-
-
-
-
-
-
-
 })(document);
 
 
@@ -54,79 +51,41 @@ jQuery.ajax({
 //    data:{'sheet':'Sheet1','headers':'1','q':'SELECT A, D, E, F, G, H OFFSET 1'},
     //headers:
   }).done(function(json){
-    totalOnlineContent = json;
-    console.log(json.Overdrive[0]);
+    //totalOnlineContent = json;
+    renderOnlineContent(json);
   });
 
 
-
-
-
-
-
-  $('#database-use').highcharts({
-        chart: {
-            type: 'area'
-        },
-        title: {
-            text: 'Historic and Estimated Worldwide Population Growth by Region'
-        },
-        subtitle: {
-            text: 'Source: Wikipedia.org'
-        },
-        xAxis: {
-            categories: totalOnlineContent.dates,
-            tickmarkPlacement: 'on',
-            title: {
-                enabled: false
-            }
-        },
-        yAxis: {
-            title: {
-                text: 'Billions'
-            },
-            labels: {
-                formatter: function () {
-                    return this.value / 1000;
-                }
-            }
-        },
-        tooltip: {
-            shared: true,
-            valueSuffix: ' millions'
-        },
-        plotOptions: {
-            area: {
-                stacking: 'normal',
-                lineColor: '#666666',
+  $('#totalOnlineContent').highcharts({
+    chart: {
+         type: 'area'
+    },
+    xAxis:{type:'datetime'},
+    plotOptions: {
+        area: {
+            stacking: 'normal',
+            lineColor: '#666666',
+            lineWidth: 1,
+            marker: {
                 lineWidth: 1,
-                marker: {
-                    lineWidth: 1,
-                    lineColor: '#666666'
-                }
+                lineColor: '#666666'
+            },
+            series:{
+              pointStart: Date.UTC(2014, 8, 1),
+              pointIntervalUnit: 'month'
             }
-        },
+        }
+    },
+    title: {
+        text: 'Highcharts data from Google Spreadsheets'
+    },
+    data: {
+        googleSpreadsheetKey: '1PxSpzQZTRsT3U3J93NKZo52e4j7nqjBD5sseQhB79GY'
+    }
+  });
 
-        series:totalOnlineContent.data
-        /*
-        series: [{
-            name: 'Asia',
-            data: [502, 635, 809, 947, 1402, 3634, 5268]
-        }, {
-            name: 'Africa',
-            data: [106, 107, 111, 133, 221, 767, 1766]
-        }, {
-            name: 'Europe',
-            data: [163, 203, 276, 408, 547, 729, 628]
-        }, {
-            name: 'America',
-            data: [18, 31, 54, 156, 339, 818, 1201]
-        }, {
-            name: 'Oceania',
-            data: [2, 2, 2, 6, 13, 30, 46]
-        }]
-        */
-    });
+var tocChart = $('#totalOnlineContent').highcharts();
+console.log(tocChart);
 
 });
 

@@ -2,6 +2,8 @@
   include "dbConnect.inc.php";
   $mysqli = mysqli_connect($host,$user,$password,$database);
 
+  $json = array();
+
 
 //get all the categories filter_list
   $query = "SELECT category FROM onlineContent GROUP BY category;";
@@ -14,22 +16,27 @@
 /*
 @TODO loop though the categoeis and then make a query based on eacy one of
 them to create an array specifially for each of them. This is not the best
-solution but it is probably the quickist. It will also scale 
+solution but it is probably the quickist. It will also scale
 
 */
-  $query = "SELECT * FROM onlineContent ORDER BY date DESC;";
 
+
+//Adding the dates to the array
+  $query = "SELECT date FROM onlineContent ORDER BY date DESC;";
   $res = $mysqli->query($query);
-  $json = array();
-
   while($row = $res->fetch_assoc()){
-
-     $json["dates"][] = $row["date"];
-     $json["info"][]["name"] = $row["category"];
-     $json["info"][]["data"] = $row["amount"];
-
+    $json["dates"][] = $row["date"];
   }
 
+//Adding the data to the graph
+  foreach($ocCategories as $key=>$oc){
+    $query = "SELECT * FROM onlineContent ORDER BY date DESC;";
+    $res = $mysqli->query($query);
+    $json["info"][$key]["name"] = $oc;
+    while($row = $res->fetch_assoc()){
+      $json["info"][$key]["data"][] = intval($row["amount"]);
+    }
+  }
 
 
   print json_encode($json);
