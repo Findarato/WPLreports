@@ -29,24 +29,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // See https://github.com/Polymer/polymer/issues/1381
   window.addEventListener('WebComponentsReady', function() {
     document.querySelector('body').removeAttribute('unresolved');
-
   });
 })(document);
 
 
 $( document ).ready(function(){
-
-  //var totalOnlineContent = {};
   jQuery.ajax({
-      url: '/php/getOnlineContent.php',
-      dataType:'json',
-      context: document.body,
-    }).done(function(json){
-  //  renderOnlineContent(json);
+    url: '/php/getOnlineContent.php',
+    dataType:'json',
+    context: document.body,
+  }).done(function(json){
   });
-
-  var tocChart = $('#totalOnlineContent').highcharts();
-
 
   $('#totalOnlineContent').highcharts({
     global:{ },
