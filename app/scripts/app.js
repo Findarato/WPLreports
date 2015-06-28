@@ -8,13 +8,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 */
 
 
-function renderOnlineContent(totalOnlineContent){
-
-
-}
-
-
-
 (function (document) {
   'use strict';
 
@@ -43,20 +36,21 @@ function renderOnlineContent(totalOnlineContent){
 
 $( document ).ready(function(){
 
-var totalOnlineContent = {};
-jQuery.ajax({
-    url: '/php/getOnlineContent.php',
-    dataType:'json',
-    context: document.body,
-//    data:{'sheet':'Sheet1','headers':'1','q':'SELECT A, D, E, F, G, H OFFSET 1'},
-    //headers:
-  }).done(function(json){
-    //totalOnlineContent = json;
-    renderOnlineContent(json);
+  //var totalOnlineContent = {};
+  jQuery.ajax({
+      url: '/php/getOnlineContent.php',
+      dataType:'json',
+      context: document.body,
+    }).done(function(json){
+  //  renderOnlineContent(json);
   });
 
+  var tocChart = $('#totalOnlineContent').highcharts();
 
   $('#totalOnlineContent').highcharts({
+    global:{ },
+    credits:{enabled:false},
+    exporting:{enabled:false},
     chart: {
          type: 'area'
     },
@@ -77,23 +71,61 @@ jQuery.ajax({
         }
     },
     title: {
-        text: 'Highcharts data from Google Spreadsheets'
+        text: 'Database Use'
     },
     data: {
-        googleSpreadsheetKey: '1PxSpzQZTRsT3U3J93NKZo52e4j7nqjBD5sseQhB79GY'
+        googleSpreadsheetKey: '1PxSpzQZTRsT3U3J93NKZo52e4j7nqjBD5sseQhB79GY',
+        parsed:function(columns){
+          //console.log(columns);
+          $.each(columns, function () {
+            if(this[0]=='Website Hits'){
+              return this
+            }else{ return "cool"}
+          });
+        },
+        complete:function(options){
+
+
+
+
+        }
     }
   });
 
-var tocChart = $('#totalOnlineContent').highcharts();
-console.log(tocChart);
+  //console.log(tocChart.series[0]);
 
+  $('#totalTechHelp').highcharts({
+    chart: {
+         type: 'area'
+    },
+    credits:{enabled:false},
+    exporting:{enabled:false},
+    xAxis:{type:'datetime'},
+    plotOptions: {
+        area: {
+            stacking: 'normal',
+            lineColor: '#666666',
+            lineWidth: 1,
+            marker: {
+                lineWidth: 1,
+                lineColor: '#666666'
+            },
+            series:{
+              pointStart: Date.UTC(2014, 8, 1),
+              pointIntervalUnit: 'month',
+              events:{
+
+              }
+            }
+        }
+    },
+    title: {
+        text: 'Tech Help'
+    },
+    data: {
+      //https://docs.google.com/spreadsheets/d/1jz1IWYOv5k2-3tWaxSJTqmcaZkcnCVojjgyGk8fK8i0/pubhtml?gid=1740153900&single=true
+      googleSpreadsheetWorksheet:'default',
+      googleSpreadsheetKey: '1jz1IWYOv5k2-3tWaxSJTqmcaZkcnCVojjgyGk8fK8i0'
+    }
+  });
 });
-
-
-
-
-// TODO: Decide if we still want to suggest wrapping as it requires
-// using webcomponents.min.js.
-// wrap document so it plays nice with other libraries
-// http://www.polymer-project.org/platform/shadow-dom.html#wrappers
-// )(wrap(document));

@@ -32,3 +32,9 @@ paper-fab:not([style-scope]):not(.style-scope) {
   margin-left: auto;
   margin-right: auto;
 }
+
+.highcharts-container svg{
+  font-family:'Roboto','Helvetica Neue',Helvetica, Arial, sans-serif;
+  height:100%;
+  width:100%;
+}
