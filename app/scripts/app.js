@@ -53,72 +53,72 @@ $( document ).ready(function(){
     credits:{enabled:false},
     exporting:{enabled:false},
     chart: {
-         type: 'area'
+      type: 'area'
     },
     xAxis:{type:'datetime'},
     plotOptions: {
-        area: {
-            stacking: 'normal',
-            lineColor: '#666666',
-            lineWidth: 1,
-            marker: {
-                lineWidth: 1,
-                lineColor: '#666666'
-            },
-            series:{
-              pointStart: Date.UTC(2014, 8, 1),
-              pointIntervalUnit: 'month'
-            }
+      area: {
+        stacking: 'normal',
+        lineColor: '#666666',
+        lineWidth: 1,
+        marker: {
+          lineWidth: 1,
+          lineColor: '#666666'
+        },
+        series:{
+          pointStart: Date.UTC(2014, 8, 1),
+          pointIntervalUnit: 'month'
         }
+      }
     },
     title: {
         text: 'Database Use'
     },
     data: {
-        googleSpreadsheetKey: '1PxSpzQZTRsT3U3J93NKZo52e4j7nqjBD5sseQhB79GY',
-        parsed:function(columns){
-          //console.log(columns);
-          $.each(columns, function () {
-            if(this[0]=='Website Hits'){
-              return this;
-              this.complete()
-            }else{ return "cool"}
-          });
-        },
-        complete:function(options){
+      googleSpreadsheetKey: '1PxSpzQZTRsT3U3J93NKZo52e4j7nqjBD5sseQhB79GY',
+      parsed:function(columns){
+        //console.log(columns);
+        $.each(columns, function () {
+          if(this[0]=='Website Hits'){
+            return this;
+            this.complete()
+          }else{ return "cool"}
+        });
+      },
+      complete:function(options){
 
-        }
+      }
     }
   });
 
 
   $('#totalTechHelp').highcharts({
     chart: {
-         type: 'area'
+      type: 'area'
     },
     credits:{enabled:false},
     exporting:{enabled:false},
     xAxis:{type:'datetime'},
     plotOptions: {
-        area: {
-            stacking: 'normal',
-            lineColor: '#666666',
-            lineWidth: 1,
-            marker: {
-                lineWidth: 1,
-                lineColor: '#666666'
-            },
-            series:{
-              pointStart: Date.UTC(2014, 8, 1),
-              pointIntervalUnit: 'month',
-              events:{
+      area: {
+        stacking: 'normal',
+        lineColor: '#666666',
+        lineWidth: 1,
+        marker: {
+          lineWidth: 1,
+          lineColor: '#666666'
+        },
+        series:{
+          pointStart: Date.UTC(2014, 8, 1),
+          pointIntervalUnit: 'month',
+          events:{
 
-              }
-            }
+          }
         }
+      }
     },
     title: {
-        text: 'Tech Help'
+      text: 'Tech Help'
     },
     data: {
       googleSpreadsheetWorksheet:'default',
