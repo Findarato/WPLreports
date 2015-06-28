@@ -47,6 +47,7 @@ $( document ).ready(function(){
 
   var tocChart = $('#totalOnlineContent').highcharts();
 
+
   $('#totalOnlineContent').highcharts({
     global:{ },
     credits:{enabled:false},
@@ -79,20 +80,17 @@ $( document ).ready(function(){
           //console.log(columns);
           $.each(columns, function () {
             if(this[0]=='Website Hits'){
-              return this
+              return this;
+              this.complete()
             }else{ return "cool"}
           });
         },
         complete:function(options){
 
-
-
-
         }
     }
   });
 
-  //console.log(tocChart.series[0]);
 
   $('#totalTechHelp').highcharts({
     chart: {
@@ -123,7 +121,6 @@ $( document ).ready(function(){
         text: 'Tech Help'
     },
     data: {
-      //https://docs.google.com/spreadsheets/d/1jz1IWYOv5k2-3tWaxSJTqmcaZkcnCVojjgyGk8fK8i0/pubhtml?gid=1740153900&single=true
       googleSpreadsheetWorksheet:'default',
       googleSpreadsheetKey: '1jz1IWYOv5k2-3tWaxSJTqmcaZkcnCVojjgyGk8fK8i0'
     }
