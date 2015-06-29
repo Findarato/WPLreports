@@ -1,6 +1,6 @@
 {
-  "name": "polymer-starter-kit",
-  "version": "0.0.0",
+  "name": "WPLreports",
+  "version": "0.0.5",
   "license": "http://polymer.github.io/LICENSE.txt",
   "dependencies": {
     "iron-elements": "PolymerElements/iron-elements#1.0.0",
@@ -17,7 +17,8 @@
     "paper-toolbar": "PolymerElements/paper-toolbar#^1.0.0",
     "google-chart": "GoogleWebComponents/google-chart#^1.0.0",
     "google-apis": "~1.0.1",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "paper-date-picker": "bendavis78/paper-date-picker#~1.0.2"
   },
   "devDependencies": {},
   "resolutions": {

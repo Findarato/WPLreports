@@ -45,6 +45,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     --menu-link-color:             #111111;
 
     /* paper-input */
+   /*
    --paper-input-container-color:       rgba(255, 255, 255, 0.64);
    --paper-input-container-focus-color: rgba(255, 255, 255, 1);
    --paper-input-container-input-color: #fff;
@@ -53,6 +54,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   }
 
 /* General styles */
+*{
+  box-sizing: border-box;
+}
+
 
 paper-material {
   border-radius: 2px;
@@ -62,6 +67,7 @@ paper-material {
   margin: 16px auto;
   background: white;
 }
+
 
 #mainToolbar {
   box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),
@@ -175,7 +181,8 @@ paper-menu a {
 
   paper-material {
     width: calc(98% - 16px);
-    padding-left: 30px;
+    /*padding-left: 30px;*/
+    padding:30px;
   }
 
 }

@@ -20,6 +20,13 @@ section paper-material{
   background-color: #fff;
 }
 
+paper-material.paper-button{
+  background: transparent;
+  height:100%;
+}
+
+
+
 .fabHolder{
   position:absolute;
   display:block;

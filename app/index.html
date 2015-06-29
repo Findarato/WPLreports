@@ -74,18 +74,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <span>Home</span>
               </a>
 
-              <a data-route="circ" href="/circ">
-                <iron-icon icon="info"></iron-icon>
+              <a data-route="circ/report" href="/circ/report">
+                <iron-icon icon="receipt"></iron-icon>
                 <span>Circulation</span>
               </a>
 
               <a data-route="it" href="/it">
-                <iron-icon icon="info"></iron-icon>
+                <iron-icon  icon="hardware:computer"></iron-icon>
                 <span>I.T.</span>
               </a>
 
               <a data-route="psu" href="/psu">
-                <iron-icon icon="mail"></iron-icon>
+                <iron-icon icon="communication:mail"></iron-icon>
                 <span>psu</span>
               </a>
           </paper-menu>
@@ -123,11 +123,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                <div id="totalTechHelp" style="height: 400px"></div>
              </paper-material>
             </section>
-            <section data-route="circ">
+            <section data-route="circ/report">
               <paper-material elevation="1">
                 <h2 class="paper-font-display2">Circulation Report</h2>
-              </paper-material>
+                <div>
+                  <form is="iron-form" id="circSort" method="get" class="horizontal flex layout">
+                  <paper-input label="Start Date" ></paper-input>
+                  <paper-input label="End Date" ></paper-input>
+                  <paper-dialog>
+                  <paper-date-picker responsive-width="655px">
+                  </paper-date-picker>
+                  </paper-dialog>
+<!--
+https://github.com/bendavis78/paper-date-picker/blob/master/demo/index.html
+-->
 
+                  <paper-button fixed>
+                    <core-icon icon="favorite"></core-icon>
+                    SEARCH
+                  </paper-button>
+                </form>
+                </div>
+              </paper-material>
             </section>
 
             <section data-route="user-info">
@@ -152,22 +169,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <p>This is the contact section</p>
               </paper-material>
             </section>
-
-
-
           </iron-pages>
-          <div class="fabHolder vertical-section">
-            <paper-fab mini icon="add"></paper-fab>
-            <paper-fab mini icon="add"></paper-fab>
-            <paper-fab mini icon="add"></paper-fab>
-            <paper-fab mini icon="add"></paper-fab>
-            <paper-fab icon="add"></paper-fab>
-          </div>
-
           </paper-header-panel>
-
     </paper-drawer-panel>
-
+    <div class="fabHolder vertical-section">
+      <paper-fab mini icon="hardware:computer" id="newIT"></paper-fab>
+      <paper-fab mini icon="communication:mail" id="newPSU"></paper-fab>
+      <paper-fab mini icon="receipt" id="newCirc"></paper-fab>
+      <paper-fab icon="add"></paper-fab>
+    </div>
     <paper-toast id="caching-complete"
                  duration="6000"
                  text="Caching complete! This app will work offline.">
@@ -190,8 +200,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     right:3em;
     bottom:3em;
   }
-  .fabHolder paper-fab:[icon="add"]:hover{
+  .fabHolder paper-fab mini{
+    position:relative;
 
+    bottom:3em;
+
+  }
+
+  .fabHolder paper-fab:[icon="add"]:hover{
+    background:blue;
+  }
+  #circSort:nth-child(2){
+    padding:2px;
   }
   </style>
   <script src="https://www.google.com/jsapi"></script>
