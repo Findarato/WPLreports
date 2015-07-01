@@ -130,9 +130,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   <form is="iron-form" id="circSort" method="get" class="horizontal flex layout">
                   <paper-input label="Start Date" ></paper-input>
                   <paper-input label="End Date" ></paper-input>
-                  <paper-dialog>
-                  <paper-date-picker responsive-width="655px">
-                  </paper-date-picker>
+                    <paper-dialog id="dialog" modal class="paper-date-picker-dialog" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
+                      <paper-date-picker id="datePicker" responsive-width="656px"></paper-date-picker>
+                      <div class="buttons">
+                        <paper-button dialog-dismiss>Cancel</paper-button>
+                        <paper-button dialog-confirm>OK</paper-button>
+                      </div>
                   </paper-dialog>
 <!--
 https://github.com/bendavis78/paper-date-picker/blob/master/demo/index.html

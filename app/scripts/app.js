@@ -118,6 +118,6 @@ $( document ).ready(function(){
       googleSpreadsheetKey: '1jz1IWYOv5k2-3tWaxSJTqmcaZkcnCVojjgyGk8fK8i0'
     }
   });
-  $('fab-icon:')
+  //$('fab-icon:')
 
 });
