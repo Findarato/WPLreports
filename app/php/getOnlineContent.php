@@ -1,4 +1,7 @@
 <?php
+  header('Cache-Control: no-cache, must-revalidate');
+  header('Expires: Sun, 08 Aug 1982 01:52:00 GMT');
+  header('Content-type: application/json');
   include "dbConnect.inc.php";
   $mysqli = mysqli_connect($host,$user,$password,$database);
 
@@ -39,4 +42,4 @@ solution but it is probably the quickist. It will also scale
   }
 
 
-  print json_encode($json);
+  print json_encode($json,JSON_PRETTY_PRINT);

@@ -25,8 +25,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- Web Application Manifest -->
   <link rel="manifest" href="manifest.json">
 
-  <!-- Chrome for Android Theme color -->
-  <meta name="msapplication-TileColor" content="#3372DF">
+  <!-- Tile color for Win8 -->
+  <meta name="msapplication-TileColor" content="#03A9F4">
 
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -35,7 +35,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- Add to homescreen for Safari on iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#03A9F4">
   <meta name="apple-mobile-web-app-title" content="WPL Reports">
   <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
 
@@ -44,7 +44,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/welcome.css">
   <!-- endbuild-->
 
   <!-- build:js bower_components/webcomponentsjs/webcomponents.min.js -->
@@ -57,6 +56,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </head>
 
 <body unresolved class="fullbleed layout vertical">
+<span id="browser-sync-binding"></span>
   <template is="dom-bind" id="app">
 
     <paper-drawer-panel id="paperDrawerPanel" responsive-width="1280px">
@@ -64,11 +64,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Drawer Toolbar -->
         <paper-toolbar id="drawerToolbar">
-          <span>Menu</span>
+          <span class="paper-font-title">Menu</span>
         </paper-toolbar>
 
         <!-- Drawer Content -->
-          <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}">
+          <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
               <a data-route="home" href="/">
                 <iron-icon icon="home"></iron-icon>
                 <span>Home</span>
@@ -94,19 +94,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <paper-header-panel class="main" main mode="waterfall-tall">
         <!-- Main Toolbar -->
         <paper-toolbar id="mainToolbar">
-          <button tabindex="1" id="paperToggle" paper-drawer-toggle>
-            <iron-icon icon="menu" paper-drawer-toggle></iron-icon>
-          </button>
+          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
           <span class="flex"></span>
 
           <!-- Toolbar icons -->
           <paper-icon-button icon="refresh"></paper-icon-button>
           <paper-icon-button icon="search"></paper-icon-button>
-          <div class="middle"></div>
 
           <!-- Application name -->
-          <div class="appname bottom paper-font-display2">WPL Reports</div>
+          <div class="middle paper-font-display2 app-name">WPL Reports</div>
 
+          <!-- Application sub title -->
+          <div class="bottom title"></div>
         </paper-toolbar>
 
         <!-- Main Content -->
@@ -118,6 +117,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   Welcome to the reporting Module.
                 </h1>
                 <div id="totalOnlineContent" style="height: 400px"></div>
+                <hc-area id="totalOnlineContent2"
+                    hide-legend
+                    width="400"
+                    height="400px"
+                    series='[{"name":"Year 1800","data":[107,31,635,203,2]},{"name":"Year 1900","data":[133,156,947,408,6]},{"name":"Year 2008","data":[973,914,4054,732,34]}]'>
+                </hc-area>
               </paper-material>
              <paper-material>
                <div id="totalTechHelp" style="height: 400px"></div>
@@ -128,24 +133,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <h2 class="paper-font-display2">Circulation Report</h2>
                 <div>
                   <form is="iron-form" id="circSort" method="get" class="horizontal flex layout">
-                  <paper-input label="Start Date" ></paper-input>
+                  <paper-input label="Start Date" data-dialog="dateDialog"></paper-input>
                   <paper-input label="End Date" ></paper-input>
-                    <paper-dialog id="dialog" modal class="paper-date-picker-dialog" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
-                      <paper-date-picker id="datePicker" responsive-width="656px"></paper-date-picker>
-                      <div class="buttons">
-                        <paper-button dialog-dismiss>Cancel</paper-button>
-                        <paper-button dialog-confirm>OK</paper-button>
-                      </div>
-                  </paper-dialog>
-<!--
-https://github.com/bendavis78/paper-date-picker/blob/master/demo/index.html
--->
-
                   <paper-button fixed>
                     <core-icon icon="favorite"></core-icon>
                     SEARCH
                   </paper-button>
                 </form>
+                <list-item></list-item>
                 </div>
               </paper-material>
             </section>
@@ -181,12 +176,11 @@ https://github.com/bendavis78/paper-date-picker/blob/master/demo/index.html
       <paper-fab mini icon="receipt" id="newCirc"></paper-fab>
       <paper-fab icon="add"></paper-fab>
     </div>
+    <!--
     <paper-toast id="caching-complete"
                  duration="6000"
                  text="Caching complete! This app will work offline.">
     </paper-toast>
-
-<!--
     <platinum-sw-register auto-register
                           clients-claim
                           skip-waiting
@@ -196,6 +190,24 @@ https://github.com/bendavis78/paper-date-picker/blob/master/demo/index.html
       </platinum-sw-cache>
     </platinum-sw-register>
 -->
+
+
+
+<paper-dialog id="dateDialog" modal
+  class="paper-date-picker-dialog"
+  entry-animation="scale-up-animation"
+  exit-animation="fade-out-animation" style="display:none;">
+    <paper-date-picker id="datePicker" responsive-width="656px"></paper-date-picker>
+    <div class="buttons">
+      <paper-button dialog-dismiss>Cancel</paper-button>
+      <paper-button dialog-confirm>OK</paper-button>
+    </div>
+</paper-dialog>
+<!--
+https://github.com/bendavis78/paper-date-picker/blob/master/demo/index.html
+-->
+
+
   </template>
   <style>
   .fabHolder{
@@ -219,13 +231,14 @@ https://github.com/bendavis78/paper-date-picker/blob/master/demo/index.html
   </style>
   <script src="https://www.google.com/jsapi"></script>
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <!--
   <script src="scripts/highcharts.js"></script>
   <script src="http://code.highcharts.com/modules/data.js"></script>
   <script src="http://code.highcharts.com/modules/exporting.js"></script>
-  <!-- build:js scripts/app.js -->
   <script src="scripts/highcharts.theme.js"></script>
+-->
+  <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
-
   <!-- endbuild-->
 </body>
 

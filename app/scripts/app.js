@@ -34,13 +34,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
 $( document ).ready(function(){
-  jQuery.ajax({
+  $.ajax({
     url: '/php/getOnlineContent.php',
     dataType:'json',
-    context: document.body,
-  }).done(function(json){
+  })
+  .success(function(json){
+    console.log(JSON.stringify(json));
   });
-
+/*
   $('#totalOnlineContent').highcharts({
     global:{ },
     credits:{enabled:false},
@@ -118,6 +119,11 @@ $( document ).ready(function(){
       googleSpreadsheetKey: '1jz1IWYOv5k2-3tWaxSJTqmcaZkcnCVojjgyGk8fK8i0'
     }
   });
+  */
   //$('fab-icon:')
+
+
+
+
 
 });
