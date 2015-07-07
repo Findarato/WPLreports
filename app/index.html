@@ -43,6 +43,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
 
   <!-- build:css styles/main.css -->
+
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.cyan-indigo.min.css" />
+    <!-- Material Design icon font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild-->
 
@@ -61,12 +65,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <paper-drawer-panel id="paperDrawerPanel" responsive-width="1280px">
       <div drawer>
-
         <!-- Drawer Toolbar -->
         <paper-toolbar id="drawerToolbar">
           <span class="paper-font-title">Menu</span>
         </paper-toolbar>
-
         <!-- Drawer Content -->
           <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
               <a data-route="home" href="/">
@@ -123,6 +125,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     height="400px"
                     series='[{"name":"Year 1800","data":[107,31,635,203,2]},{"name":"Year 1900","data":[133,156,947,408,6]},{"name":"Year 2008","data":[973,914,4054,732,34]}]'>
                 </hc-area>
+
+
               </paper-material>
              <paper-material>
                <div id="totalTechHelp" style="height: 400px"></div>
@@ -132,13 +136,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <paper-material elevation="1">
                 <h2 class="paper-font-display2">Circulation Report</h2>
                 <div>
-                  <form is="iron-form" id="circSort" method="get" class="horizontal flex layout">
+                  <form is="iron-form" id="circSort" method="get" class="horizontal flex layout center">
                   <paper-input label="Start Date" data-dialog="dateDialog"></paper-input>
                   <paper-input label="End Date" ></paper-input>
-                  <paper-button fixed>
-                    <core-icon icon="favorite"></core-icon>
-                    SEARCH
-                  </paper-button>
+                  <paper-icon-button icon="arrow-forward"></paper-icon-button>
+
                 </form>
                 <list-item></list-item>
                 </div>
@@ -171,10 +173,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </paper-header-panel>
     </paper-drawer-panel>
     <div class="fabHolder vertical-section">
-      <paper-fab mini icon="hardware:computer" id="newIT"></paper-fab>
-      <paper-fab mini icon="communication:mail" id="newPSU"></paper-fab>
-      <paper-fab mini icon="receipt" id="newCirc"></paper-fab>
-      <paper-fab icon="add"></paper-fab>
+      <paper-fab icon="add">
+        <ul>
+          <li><paper-fab mini icon="hardware:computer" id="newIT"></paper-fab></li>
+          <li><paper-fab mini icon="communication:mail" id="newPSU"></paper-fab></li>
+          <li><paper-fab mini icon="receipt" id="newCirc"></paper-fab></li>
+        </ul>
+      </paper-fab>
     </div>
     <!--
     <paper-toast id="caching-complete"
@@ -231,6 +236,7 @@ https://github.com/bendavis78/paper-date-picker/blob/master/demo/index.html
   </style>
   <script src="https://www.google.com/jsapi"></script>
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
   <!--
   <script src="scripts/highcharts.js"></script>
   <script src="http://code.highcharts.com/modules/data.js"></script>
