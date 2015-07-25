@@ -15,8 +15,6 @@
 
 
 
-
-
 //  $fullTable = $db->Query("SELECT * FROM CircStatsCategorized ORDER BY ReportMonth;","FALSE","assoc_array");
 
   while($row = $res->fetch_assoc()){
