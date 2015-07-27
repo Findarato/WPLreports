@@ -34,13 +34,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
 $( document ).ready(function(){
-  $.ajax({
-    url: '/php/getOnlineContent.php',
-    dataType:'json',
-  })
-  .success(function(json){
-    console.log(JSON.stringify(json));
-  });
 /*
   $('#totalOnlineContent').highcharts({
     global:{ },
