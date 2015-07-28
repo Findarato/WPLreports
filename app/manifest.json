@@ -1,6 +1,8 @@
 {
   "name": "WPL Reports",
   "short_name": "WPL Reports",
+  "version":"0.5",
+  "manifest_version": 2,
   "icons": [{
         "src": "images/touch/icon-128x128.png",
         "sizes": "128x128"

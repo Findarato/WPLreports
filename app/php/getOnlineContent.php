@@ -40,6 +40,4 @@ solution but it is probably the quickist. It will also scale
       $json["info"][$key]["data"][] = intval($row["amount"]);
     }
   }
-
-
-  print json_encode($json,JSON_PRETTY_PRINT);
+rint json_encode($json,JSON_PRETTY_PRINT);
