@@ -35,13 +35,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     //  app.params = data.params;
     });
 
+    // Middleware
+    function scrollToTop(ctx, next) {
+      app.scrollPageToTop();
+      next();
+    }
 
-    page('/users/:name', function (data) {
+    page('/users/:name',scroll,ToTop function (data) {
       app.route = 'user-info';
       app.params = data.params;
     });
 
-    page('/contact', function () {
+    page('/contact', scrollToTop, function() {
       app.route = 'contact';
     });
 

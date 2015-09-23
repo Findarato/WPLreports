@@ -5,3 +5,5 @@ test/temp
 Vagrant
 node_modules
 old_code
+dist
+bower_components

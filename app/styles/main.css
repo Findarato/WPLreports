@@ -8,27 +8,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 */
 
 body {
-    background: #fafafa;
-    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #333;
-}
-
-paper-material.paper-button{
-  background: transparent;
-  height:100%;
-}
-
-
-
-.fabHolder{
-  position:absolute;
-  display:block;
-
-}
-
-paper-fab:not([style-scope]):not(.style-scope) {
-  display: block;
-  margin-bottom: 24px;
-  margin-left: auto;
-  margin-right: auto;
+  background: #fafafa;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
 }
