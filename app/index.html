@@ -81,27 +81,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <iron-icon icon="home"></iron-icon>
                 <span>Home</span>
               </a>
-
               <a data-route="circ/report" href="/circ/report" on-click="onDataRouteClick">
                 <iron-icon icon="receipt"></iron-icon>
                 <span>Circulation</span>
               </a>
-
               <a data-route="it" href="/it" on-click="onDataRouteClick">
                 <iron-icon  icon="hardware:computer"></iron-icon>
                 <span>I.T.</span>
               </a>
-
               <a data-route="psu" href="/psu" on-click="onDataRouteClick">
                 <iron-icon icon="communication:mail"></iron-icon>
                 <span>psu</span>
               </a>
           </paper-menu>
           <google-signin client-id="900946452531-ep0bhil5dh3he9o6uil7r6pmr9v9l247.apps.googleusercontent.com"></google-signin>
-      </div>
-      <paper-header-panel class="main" main mode="waterfall-tall">
+      </paper-scroll-header-panel>
+      <!-- Main Area -->
+      <paper-scroll-header-panel main condenses keep-condensed-header>
+
         <!-- Main Toolbar -->
-        <paper-toolbar id="mainToolbar">
+        <paper-toolbar id="mainToolbar" class="tall">
           <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
           <span class="flex"></span>
 
@@ -123,7 +122,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Main Content -->
         <div class="content">
-          <iron-pages attr-for-selected="data-route" selected="{{route}}">
+          <iron-pages attr-for-selected="data-route" selected="[[route]]">
 
             <section data-route="home">
               <paper-material elevation="1">
