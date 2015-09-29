@@ -1,0 +1,87 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="wpl-report">
+  <style>
+    :host {
+      display: block;
+    }
+    .wpl-Title{
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    .wpl-Month{
+
+    }
+  </style>
+  <template>
+<!--    <div>Hello from <span>{{foo}}</span></div>-->
+    <div id="title" class="wpl-Title">
+      Westchester Public Library<br>
+      Monthly Circulation Report
+    </div>
+    <div id="monthLabel">August 2015</div>
+    <div id="statsTemplate" style="display:none;">
+      <div id="statsTemplate" style="display:none;">
+        <table id="circStats" style="border:none;width:100%;border-spacing:0;margin-bottom:2em;">
+          <tbody><tr class="shade">
+            <td>
+              <div class="infoCol" id="libraryName">library name</div>
+            </td>
+            <td>
+              <div class="infoCol" id="prevMonth">Prev Month</div>
+            </td>
+            <td>
+              <div class="infoCol" id="curMonth">Cur Month</div>
+            </td>
+            <td>
+              <div class="infoCol" id="delta">% Change</div>
+            </td>
+            <td>
+              <div class="infoCol" id="prevYTD">YTD</div>
+            </td>
+            <td>
+              <div class="infoCol" id="curYTD">YTD</div>
+            </td>
+            <td>
+              <div class="infoCol" id="deltaYTD">% Change</div>
+            </td>
+          </tr>
+          <tr id="totals">
+            <td><div id="totalLibraryName"></div></td>
+            <td id="totalPrevMonth"></td>
+            <td id="totalCurMonth"></td>
+            <td id="totalDelta"></td>
+            <td id="totalPrevMonthYTD"></td>
+            <td id="totalCurMonthYTD"></td>
+            <td id="totalDeltaYTD"></td>
+          </tr>
+        </tbody></table>
+      </div>
+</div>
+  </template>
+</dom-module>
+<script>
+(function() {
+  Polymer({
+    is: 'wpl-report',
+
+    properties: {
+      foo: {
+        type: String,
+        value: 'bar',
+        notify: true
+      }
+    }
+  });
+})();
+</script>
