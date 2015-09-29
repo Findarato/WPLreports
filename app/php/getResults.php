@@ -24,6 +24,6 @@
   //print_r($fullTable);
   //print_r($db);
 
-  echo json_encode($fullTable);
+  echo json_encode($fullTable,JSON_PRETTY_PRINT);
 
 ?>

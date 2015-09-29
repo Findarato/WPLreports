@@ -1,0 +1,243 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@2.11.2
+3 info using node@v0.12.5
+4 verbose readDependencies loading dependencies from /vagrant/code/package.json
+5 verbose install where, deps [ '/vagrant/code',
+5 verbose install   [ 'ansi-regex',
+5 verbose install     'es6-promise',
+5 verbose install     'immutable',
+5 verbose install     'lodash',
+5 verbose install     'browser-sync',
+5 verbose install     'connect-history-api-fallback',
+5 verbose install     'del',
+5 verbose install     'glob',
+5 verbose install     'gulp',
+5 verbose install     'gulp-autoprefixer',
+5 verbose install     'gulp-cache',
+5 verbose install     'gulp-changed',
+5 verbose install     'gulp-flatten',
+5 verbose install     'gulp-cssmin',
+5 verbose install     'gulp-if',
+5 verbose install     'gulp-imagemin',
+5 verbose install     'gulp-jshint',
+5 verbose install     'gulp-load-plugins',
+5 verbose install     'gulp-minify-html',
+5 verbose install     'gulp-rename',
+5 verbose install     'gulp-replace',
+5 verbose install     'gulp-size',
+5 verbose install     'gulp-uglify',
+5 verbose install     'gulp-useref',
+5 verbose install     'gulp-vulcanize',
+5 verbose install     'jshint-stylish',
+5 verbose install     'merge-stream',
+5 verbose install     'polybuild',
+5 verbose install     'require-dir',
+5 verbose install     'run-sequence',
+5 verbose install     'vulcanize',
+5 verbose install     'web-component-tester' ] ]
+6 verbose install where, peers [ '/vagrant/code', [] ]
+7 verbose installManyTop reading for lifecycle /vagrant/code/package.json
+8 info preinstall WPL-Reports@0.3.0
+9 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/ansi-regex/package.json
+10 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/apache-server-configs/package.json
+11 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/browser-sync/package.json
+12 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/connect-history-api-fallback/package.json
+13 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/del/package.json
+14 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/es6-promise/package.json
+15 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/glob/package.json
+16 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/gulp/package.json
+17 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/gulp-autoprefixer/package.json
+18 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/gulp-cache/package.json
+19 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/gulp-changed/package.json
+20 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/gulp-cssmin/package.json
+21 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/gulp-flatten/package.json
+22 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/gulp-if/package.json
+23 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/gulp-imagemin/package.json
+24 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/gulp-jshint/package.json
+25 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/gulp-load-plugins/package.json
+26 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/gulp-minify-html/package.json
+27 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/gulp-rename/package.json
+28 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/gulp-replace/package.json
+29 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/gulp-size/package.json
+30 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/gulp-uglify/package.json
+31 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/gulp-uncss/package.json
+32 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/gulp-useref/package.json
+33 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/gulp-vulcanize/package.json
+34 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/immutable/package.json
+35 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/jshint-stylish/package.json
+36 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/lodash/package.json
+37 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/merge-stream/package.json
+38 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/opn/package.json
+39 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/polybuild/package.json
+40 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/require-dir/package.json
+41 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/run-sequence/package.json
+42 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/vulcanize/package.json
+43 verbose installManyTop reading scoped package data from /vagrant/code/node_modules/web-component-tester/package.json
+44 info package.json apache-server-configs@2.14.0 license should be a valid SPDX license expression
+45 info package.json gulp-if@1.2.5 No license field.
+46 info package.json gulp-rename@1.2.2 No license field.
+47 info package.json web-component-tester@3.3.22 license should be a valid SPDX license expression
+48 verbose readDependencies loading dependencies from /vagrant/code/package.json
+49 verbose targetResolver reading package data from /vagrant/code/node_modules/ansi-regex/package.json
+50 verbose targetResolver reading package data from /vagrant/code/node_modules/apache-server-configs/package.json
+51 verbose targetResolver reading package data from /vagrant/code/node_modules/browser-sync/package.json
+52 verbose targetResolver reading package data from /vagrant/code/node_modules/connect-history-api-fallback/package.json
+53 verbose targetResolver reading package data from /vagrant/code/node_modules/del/package.json
+54 verbose targetResolver reading package data from /vagrant/code/node_modules/es6-promise/package.json
+55 verbose targetResolver reading package data from /vagrant/code/node_modules/glob/package.json
+56 verbose targetResolver reading package data from /vagrant/code/node_modules/gulp/package.json
+57 verbose targetResolver reading package data from /vagrant/code/node_modules/gulp-autoprefixer/package.json
+58 verbose targetResolver reading package data from /vagrant/code/node_modules/gulp-cache/package.json
+59 verbose targetResolver reading package data from /vagrant/code/node_modules/gulp-changed/package.json
+60 verbose targetResolver reading package data from /vagrant/code/node_modules/gulp-cssmin/package.json
+61 verbose targetResolver reading package data from /vagrant/code/node_modules/gulp-flatten/package.json
+62 verbose targetResolver reading package data from /vagrant/code/node_modules/gulp-if/package.json
+63 verbose targetResolver reading package data from /vagrant/code/node_modules/gulp-imagemin/package.json
+64 verbose targetResolver reading package data from /vagrant/code/node_modules/gulp-jshint/package.json
+65 verbose targetResolver reading package data from /vagrant/code/node_modules/gulp-load-plugins/package.json
+66 verbose targetResolver reading package data from /vagrant/code/node_modules/gulp-minify-html/package.json
+67 verbose targetResolver reading package data from /vagrant/code/node_modules/gulp-rename/package.json
+68 verbose targetResolver reading package data from /vagrant/code/node_modules/gulp-replace/package.json
+69 verbose targetResolver reading package data from /vagrant/code/node_modules/gulp-size/package.json
+70 verbose targetResolver reading package data from /vagrant/code/node_modules/gulp-uglify/package.json
+71 verbose targetResolver reading package data from /vagrant/code/node_modules/gulp-uncss/package.json
+72 verbose targetResolver reading package data from /vagrant/code/node_modules/gulp-useref/package.json
+73 verbose targetResolver reading package data from /vagrant/code/node_modules/gulp-vulcanize/package.json
+74 verbose targetResolver reading package data from /vagrant/code/node_modules/immutable/package.json
+75 verbose targetResolver reading package data from /vagrant/code/node_modules/jshint-stylish/package.json
+76 verbose targetResolver reading package data from /vagrant/code/node_modules/lodash/package.json
+77 verbose targetResolver reading package data from /vagrant/code/node_modules/merge-stream/package.json
+78 verbose targetResolver reading package data from /vagrant/code/node_modules/opn/package.json
+79 verbose targetResolver reading package data from /vagrant/code/node_modules/polybuild/package.json
+80 verbose targetResolver reading package data from /vagrant/code/node_modules/require-dir/package.json
+81 verbose targetResolver reading package data from /vagrant/code/node_modules/run-sequence/package.json
+82 verbose targetResolver reading package data from /vagrant/code/node_modules/vulcanize/package.json
+83 verbose targetResolver reading package data from /vagrant/code/node_modules/web-component-tester/package.json
+84 verbose targetResolver reading package data from /vagrant/code/node_modules/.bin/browser-sync/package.json
+85 verbose targetResolver reading package data from /vagrant/code/node_modules/.bin/gulp/package.json
+86 verbose targetResolver reading package data from /vagrant/code/node_modules/.bin/polybuild/package.json
+87 verbose targetResolver reading package data from /vagrant/code/node_modules/.bin/vulcanize/package.json
+88 verbose targetResolver reading package data from /vagrant/code/node_modules/.bin/wct/package.json
+89 verbose targetResolver reading package data from /vagrant/code/node_modules/.bin/wct-st/package.json
+90 verbose already installed skipping gulp@^3.8.5 /vagrant/code
+91 verbose already installed skipping gulp-autoprefixer@^2.1.0 /vagrant/code
+92 verbose already installed skipping gulp-cache@^0.2.8 /vagrant/code
+93 verbose already installed skipping gulp-changed@^1.0.0 /vagrant/code
+94 verbose already installed skipping gulp-flatten@0.0.4 /vagrant/code
+95 verbose already installed skipping gulp-cssmin@^0.1.7 /vagrant/code
+96 verbose already installed skipping gulp-if@^1.2.1 /vagrant/code
+97 verbose already installed skipping gulp-imagemin@^2.2.1 /vagrant/code
+98 verbose already installed skipping gulp-jshint@^1.6.3 /vagrant/code
+99 verbose already installed skipping gulp-load-plugins@^0.10.0 /vagrant/code
+100 verbose already installed skipping gulp-minify-html@^1.0.2 /vagrant/code
+101 verbose already installed skipping gulp-rename@^1.2.0 /vagrant/code
+102 verbose already installed skipping gulp-replace@^0.5.3 /vagrant/code
+103 verbose already installed skipping gulp-size@^1.0.0 /vagrant/code
+104 verbose already installed skipping gulp-uglify@^1.2.0 /vagrant/code
+105 verbose already installed skipping gulp-useref@^1.1.2 /vagrant/code
+106 verbose already installed skipping gulp-vulcanize@^6.0.0 /vagrant/code
+107 verbose already installed skipping jshint-stylish@^2.0.0 /vagrant/code
+108 verbose already installed skipping merge-stream@^0.1.7 /vagrant/code
+109 verbose already installed skipping polybuild@^1.0.5 /vagrant/code
+110 verbose already installed skipping require-dir@^0.3.0 /vagrant/code
+111 verbose already installed skipping run-sequence@^1.0.2 /vagrant/code
+112 verbose already installed skipping vulcanize@>= 1.4.2 /vagrant/code
+113 verbose already installed skipping web-component-tester@^3.1.3 /vagrant/code
+114 verbose already installed skipping ansi-regex@^2.0.0 /vagrant/code
+115 verbose already installed skipping es6-promise@~2.3.0 /vagrant/code
+116 verbose already installed skipping immutable@~3.7.3 /vagrant/code
+117 verbose already installed skipping lodash@~3.9.3 /vagrant/code
+118 verbose already installed skipping browser-sync@^2.7.7 /vagrant/code
+119 verbose already installed skipping connect-history-api-fallback@^1.1.0 /vagrant/code
+120 verbose already installed skipping del@^1.1.1 /vagrant/code
+121 verbose already installed skipping glob@^5.0.6 /vagrant/code
+122 silly install resolved []
+123 info build /vagrant/code
+124 info linkStuff WPL-Reports@0.3.0
+125 silly linkStuff WPL-Reports@0.3.0 has /vagrant as its parent node_modules
+126 verbose linkBins WPL-Reports@0.3.0
+127 verbose linkMans WPL-Reports@0.3.0
+128 verbose rebuildBundles WPL-Reports@0.3.0
+129 verbose rebuildBundles [ '.bin',
+129 verbose rebuildBundles   'ansi-regex',
+129 verbose rebuildBundles   'apache-server-configs',
+129 verbose rebuildBundles   'browser-sync',
+129 verbose rebuildBundles   'connect-history-api-fallback',
+129 verbose rebuildBundles   'del',
+129 verbose rebuildBundles   'es6-promise',
+129 verbose rebuildBundles   'glob',
+129 verbose rebuildBundles   'gulp',
+129 verbose rebuildBundles   'gulp-autoprefixer',
+129 verbose rebuildBundles   'gulp-cache',
+129 verbose rebuildBundles   'gulp-changed',
+129 verbose rebuildBundles   'gulp-cssmin',
+129 verbose rebuildBundles   'gulp-flatten',
+129 verbose rebuildBundles   'gulp-if',
+129 verbose rebuildBundles   'gulp-imagemin',
+129 verbose rebuildBundles   'gulp-jshint',
+129 verbose rebuildBundles   'gulp-load-plugins',
+129 verbose rebuildBundles   'gulp-minify-html',
+129 verbose rebuildBundles   'gulp-rename',
+129 verbose rebuildBundles   'gulp-replace',
+129 verbose rebuildBundles   'gulp-size',
+129 verbose rebuildBundles   'gulp-uglify',
+129 verbose rebuildBundles   'gulp-uncss',
+129 verbose rebuildBundles   'gulp-useref',
+129 verbose rebuildBundles   'gulp-vulcanize',
+129 verbose rebuildBundles   'immutable',
+129 verbose rebuildBundles   'jshint-stylish',
+129 verbose rebuildBundles   'lodash',
+129 verbose rebuildBundles   'merge-stream',
+129 verbose rebuildBundles   'opn',
+129 verbose rebuildBundles   'polybuild',
+129 verbose rebuildBundles   'require-dir',
+129 verbose rebuildBundles   'run-sequence',
+129 verbose rebuildBundles   'vulcanize',
+129 verbose rebuildBundles   'web-component-tester' ]
+130 verbose rebuild bundle /vagrant/code/node_modules/apache-server-configs
+131 info build /vagrant/code/node_modules/apache-server-configs
+132 info preinstall apache-server-configs@2.14.0
+133 info linkStuff apache-server-configs@2.14.0
+134 silly linkStuff apache-server-configs@2.14.0 has /vagrant/code/node_modules as its parent node_modules
+135 verbose linkBins apache-server-configs@2.14.0
+136 verbose linkMans apache-server-configs@2.14.0
+137 verbose rebuildBundles apache-server-configs@2.14.0
+138 info install apache-server-configs@2.14.0
+139 info postinstall apache-server-configs@2.14.0
+140 verbose rebuild bundle /vagrant/code/node_modules/gulp-uncss
+141 info build /vagrant/code/node_modules/gulp-uncss
+142 info preinstall gulp-uncss@1.0.3
+143 info linkStuff gulp-uncss@1.0.3
+144 silly linkStuff gulp-uncss@1.0.3 has /vagrant/code/node_modules as its parent node_modules
+145 verbose linkBins gulp-uncss@1.0.3
+146 verbose linkMans gulp-uncss@1.0.3
+147 verbose rebuildBundles gulp-uncss@1.0.3
+148 verbose rebuildBundles [ '.bin', 'gulp-util', 'object-assign', 'uncss' ]
+149 info install gulp-uncss@1.0.3
+150 info postinstall gulp-uncss@1.0.3
+151 verbose rebuild bundle /vagrant/code/node_modules/opn
+152 info build /vagrant/code/node_modules/opn
+153 info preinstall opn@1.0.2
+154 info linkStuff opn@1.0.2
+155 silly linkStuff opn@1.0.2 has /vagrant/code/node_modules as its parent node_modules
+156 verbose linkBins opn@1.0.2
+157 verbose link bins [ { opn: 'cli.js' }, '/vagrant/code/node_modules/.bin', false ]
+158 verbose linkMans opn@1.0.2
+159 verbose rebuildBundles opn@1.0.2
+160 silly gentlyRm /vagrant/code/node_modules/.bin/opn is being purged
+161 verbose gentlyRm don't care about contents; nuking /vagrant/code/node_modules/.bin/opn
+162 verbose stack Error: EPROTO, symlink '../opn/cli.js'
+162 verbose stack     at Error (native)
+163 verbose cwd /vagrant/code
+164 error Linux 3.13.0-63-generic
+165 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+166 error node v0.12.5
+167 error npm  v2.11.2
+168 error path ../opn/cli.js
+169 error code EPROTO
+170 error errno -71
+171 error EPROTO, symlink '../opn/cli.js'
+172 error If you need help, you may report this error at:
+172 error     <https://github.com/npm/npm/issues>
+173 verbose exit [ -71, true ]

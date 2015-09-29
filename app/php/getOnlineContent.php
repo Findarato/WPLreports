@@ -1,4 +1,4 @@
-<?php
+<?Php
   header('Cache-Control: no-cache, must-revalidate');
   header('Expires: Sun, 08 Aug 1982 01:52:00 GMT');
   header('Content-type: application/json');
@@ -40,4 +40,4 @@ solution but it is probably the quickist. It will also scale
       $json["info"][$key]["data"][] = intval($row["amount"]);
     }
   }
-rint json_encode($json,JSON_PRETTY_PRINT);
+print json_encode($json,JSON_PRETTY_PRINT);

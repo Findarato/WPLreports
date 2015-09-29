@@ -1,6 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <!--<link rel="import" href="../../bower_components/iron-collapse/iron-collapse.html">-->
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/simple-material-table/simple-material-table.html">
 
 
 <dom-module id="list-item">
@@ -11,6 +12,7 @@
         min-height:5em;
       }
     </style>
+<!--
   <iron-ajax
     auto
     url="http://api.openweathermap.org/data/2.5/weather"
@@ -19,37 +21,24 @@
     on-response="handleResponse"
     debounce-duration="300">
   </iron-ajax>
-
-  <iron-ajax
-    auto
-    url="/php/getOnlineContent.php"
-    params='{}'
-    handle-as="json"
-    on-response="processData"
-    debounce-duration="300">
-  </iron-ajax>
+-->
   <template>
-    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-      <thead>
-        <tr>
-        <template is="dom-repeat" items="{{headers}}" as="head" index-as="head_no">
-          <th class="mdl-data-table__cell--non-numeric">{{head}}</th>
-        </template>
-        </tr>
-      </thead>
-      <tbody>
-        <template is="dom-repeat" items="{{body}}" as="bodyData">
-          <tr>
-          <template is="dom-repeat" items="{{bodyData}}" as="item">
-            <td>
-              {{item}}{{bodyData}}
-            </td>
-          </template>
-          </tr>
-        </template>
-      </tbody>
-    </table>
-  </template>
+    <iron-ajax
+      auto="true"
+      url="http://localhost:3080/php/getResults.php"
+      params='{}'
+      handle-as="json"
+      method="GET"
+      last-response="processData"></iron-ajax>
+
+      <simple-material-table
+        title="Test Table"
+        columns="[['Report Month','Branch','Group','Checkouts']]"
+        table-data="[
+          ['Cool Beans','9781600067112','FIC MANGUM','2010','Everything seems to be going perfectly for Maya Davis: She has a great job at a coffee shop, gets along with her parents, and is happily single. That is until her best friend starts dating Maya?s high school sweetheart. This funny, heartwarming fiction story by best-selling author Erynn Mangum uses the power of story to challenge teens to discover the relevance of faith in their relationships and their lives.'],
+          ['Cool Beans','9781600067112','FIC MANGUM','2010','Everything seems to be going perfectly for Maya Davis: She has a great job at a coffee shop, gets along with her parents, and is happily single. That is until her best friend starts dating Maya?s high school sweetheart. This funny, heartwarming fiction story by best-selling author Erynn Mangum uses the power of story to challenge teens to discover the relevance of faith in their relationships and their lives.']
+        ]" >
+      </material-table>
 </dom-module>
 <script>
 (function() {
@@ -63,17 +52,18 @@
         },
         body:{
           type:Array,
-          value:[['Cool Beans','9781600067112','FIC MANGUM','2010','Everything seems to be going perfectly for Maya Davis: She has a great job at a coffee shop, gets along with her parents, and is happily single. That is until her best friend starts dating Maya?s high school sweetheart. This funny, heartwarming fiction story by best-selling author Erynn Mangum uses the power of story to challenge teens to discover the relevance of faith in their relationships and their lives.'],['Cool Beans','9781600067112','FIC MANGUM','2010','Everything seems to be going perfectly for Maya Davis: She has a great job at a coffee shop, gets along with her parents, and is happily single. That is until her best friend starts dating Maya?s high school sweetheart. This funny, heartwarming fiction story by best-selling author Erynn Mangum uses the power of story to challenge teens to discover the relevance of faith in their relationships and their lives.']],
-          notify:true
-        },
-        data:{
-          type:Object,
+          value:[
+            ['Cool Beans','9781600067112','FIC MANGUM','2010','Everything seems to be going perfectly for Maya Davis: She has a great job at a coffee shop, gets along with her parents, and is happily single. That is until her best friend starts dating Maya?s high school sweetheart. This funny, heartwarming fiction story by best-selling author Erynn Mangum uses the power of story to challenge teens to discover the relevance of faith in their relationships and their lives.'],
+            ['Cool Beans','9781600067112','FIC MANGUM','2010','Everything seems to be going perfectly for Maya Davis: She has a great job at a coffee shop, gets along with her parents, and is happily single. That is until her best friend starts dating Maya?s high school sweetheart. This funny, heartwarming fiction story by best-selling author Erynn Mangum uses the power of story to challenge teens to discover the relevance of faith in their relationships and their lives.']
+          ],
           notify:true
         }
       },
       processData(data){
-        console.log('I got some data!');
-        console.log(JSON.stringify(data));
+        properties.headers=['Report Month','Branch','Group','Checkouts'];
+        //console.log(data)
+        properties.value=data;
+        console.log(data.Branch);
       }
     })
   })();
